@@ -1,7 +1,12 @@
 [
   {
     "slug": "nerkhito",
-    "title": { "en": "Nerkhito", "fa": "نرخیتو" },
+    "title": {
+      "en": "Nerkhito",
+      "fa": "نرخیتو"
+    },
+    "accent": "#10b981",
+    "motif": "chart",
     "url": "https://nerkhito.ir/",
     "featured": true,
     "kind": {
@@ -31,11 +36,23 @@
         "zh": "人工数据操作"
       }
     },
-    "tags": ["WordPress", "PHP", "REST APIs", "Automation", "SEO", "Performance"]
+    "tags": [
+      "WordPress",
+      "PHP",
+      "REST APIs",
+      "Automation",
+      "SEO",
+      "Performance"
+    ]
   },
   {
     "slug": "otaghak",
-    "title": { "en": "Otaghak Blog", "fa": "بلاگ اتاقک" },
+    "title": {
+      "en": "Otaghak Blog",
+      "fa": "بلاگ اتاقک"
+    },
+    "accent": "#f59e0b",
+    "motif": "route",
     "url": "https://www.otaghak.com/blog/",
     "featured": true,
     "kind": {
@@ -54,11 +71,21 @@
       "ar": "إعادة تصميم شاملة لمدونة Otaghak وفق مبادئ UI/UX، مع إضافة أساسية معيارية تجلب بيانات السفر الحية من واجهات API للمنصة الرئيسية إلى المقالات.",
       "zh": "基于 UI/UX 原则对 Otaghak 博客进行全面重新设计，并开发模块化核心插件，将主平台 API 的实时旅行数据引入文章。"
     },
-    "tags": ["WordPress", "Theme Engineering", "Frontend", "Performance"]
+    "tags": [
+      "WordPress",
+      "Theme Engineering",
+      "Frontend",
+      "Performance"
+    ]
   },
   {
     "slug": "dalili-group",
-    "title": { "en": "Dalili Group", "fa": "گروه دلیلی" },
+    "title": {
+      "en": "Dalili Group",
+      "fa": "گروه دلیلی"
+    },
+    "accent": "#ef4444",
+    "motif": "gauge",
     "url": "https://daliligroup.com/",
     "featured": true,
     "kind": {
@@ -88,40 +115,143 @@
         "zh": "页面加载时间"
       }
     },
-    "tags": ["WordPress", "Content Architecture", "Elementor", "Dynamic Content"]
+    "tags": [
+      "WordPress",
+      "Content Architecture",
+      "Elementor",
+      "Dynamic Content"
+    ]
   },
   {
     "slug": "ibamo",
-    "title": { "en": "Ibamo" },
+    "title": {
+      "en": "Ibamo"
+    },
+    "accent": "#f97316",
+    "motif": "store",
+    "kind": {
+      "fa": "فروشگاه اینترنتی",
+      "en": "Online store",
+      "de": "Onlineshop",
+      "tr": "Online mağaza",
+      "ar": "متجر إلكتروني",
+      "zh": "在线商店"
+    },
     "url": "https://ibamo.ir/",
-    "tags": ["WooCommerce", "Custom Development", "Optimization", "Maintenance"]
+    "tags": [
+      "WooCommerce",
+      "Custom Development",
+      "Optimization",
+      "Maintenance"
+    ]
   },
   {
     "slug": "simply-travel",
-    "title": { "en": "Simply Travel & Tour" },
+    "title": {
+      "en": "Simply Travel & Tour"
+    },
+    "accent": "#14b8a6",
+    "motif": "plane",
+    "kind": {
+      "fa": "پلتفرم سفر",
+      "en": "Travel platform",
+      "de": "Reiseplattform",
+      "tr": "Seyahat platformu",
+      "ar": "منصة سفر",
+      "zh": "旅行平台"
+    },
     "url": "https://simplytravelandtour.com/",
-    "tags": ["Travel", "Theme Engineering", "Frontend", "Performance"]
+    "tags": [
+      "Travel",
+      "Theme Engineering",
+      "Frontend",
+      "Performance"
+    ]
   },
   {
     "slug": "cyra-beauty",
-    "title": { "en": "Cyra Beauty" },
+    "title": {
+      "en": "Cyra Beauty"
+    },
+    "accent": "#ec4899",
+    "motif": "beauty",
+    "kind": {
+      "fa": "فروشگاه زیبایی",
+      "en": "Beauty store",
+      "de": "Beauty-Shop",
+      "tr": "Güzellik mağazası",
+      "ar": "متجر تجميل",
+      "zh": "美妆商店"
+    },
     "url": "https://cyrabeauty.ca/",
-    "tags": ["WooCommerce", "Elementor", "Optimization", "Maintenance"]
+    "tags": [
+      "WooCommerce",
+      "Elementor",
+      "Optimization",
+      "Maintenance"
+    ]
   },
   {
     "slug": "unique-cut",
-    "title": { "en": "Unique Cut" },
+    "title": {
+      "en": "Unique Cut"
+    },
+    "accent": "#eab308",
+    "motif": "scissors",
+    "kind": {
+      "fa": "وب‌سایت برند",
+      "en": "Brand website",
+      "de": "Marken-Website",
+      "tr": "Marka web sitesi",
+      "ar": "موقع علامة تجارية",
+      "zh": "品牌网站"
+    },
     "url": "https://uniquecut.ca/",
-    "tags": ["WordPress", "Elementor"]
+    "tags": [
+      "WordPress",
+      "Elementor"
+    ]
   },
   {
     "slug": "violet-build",
-    "title": { "en": "Violet Build" },
-    "tags": ["WordPress", "Theme Engineering", "Performance"]
+    "title": {
+      "en": "Violet Build"
+    },
+    "accent": "#8b5cf6",
+    "motif": "blueprint",
+    "kind": {
+      "fa": "ساخت و ساز",
+      "en": "Construction",
+      "de": "Bauwesen",
+      "tr": "İnşaat",
+      "ar": "البناء والتشييد",
+      "zh": "建筑施工"
+    },
+    "tags": [
+      "WordPress",
+      "Theme Engineering",
+      "Performance"
+    ]
   },
   {
     "slug": "concepto-interiors",
-    "title": { "en": "Concepto Interiors" },
-    "tags": ["WordPress", "Theme Engineering", "Performance"]
+    "title": {
+      "en": "Concepto Interiors"
+    },
+    "accent": "#d4a373",
+    "motif": "floorplan",
+    "kind": {
+      "fa": "طراحی داخلی",
+      "en": "Interior design",
+      "de": "Innenarchitektur",
+      "tr": "İç mimari",
+      "ar": "التصميم الداخلي",
+      "zh": "室内设计"
+    },
+    "tags": [
+      "WordPress",
+      "Theme Engineering",
+      "Performance"
+    ]
   }
 ]
