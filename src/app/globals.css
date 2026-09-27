@@ -431,3 +431,7 @@ html[dir="ltr"] body {
   .sc-card, .sc-card * { animation: none !important; transition: none !important; }
   .sc-card .sc-needle { transform: rotate(0deg); }
 }
+
+/* Signature image: white ink on dark, black ink on light */
+.signature-ink { filter: brightness(0) invert(1); }
+[data-theme="light"] .signature-ink { filter: brightness(0); }
