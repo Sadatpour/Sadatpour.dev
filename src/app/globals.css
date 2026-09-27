@@ -476,3 +476,41 @@ html[dir="ltr"] body {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .glass-header, .glass-bar, .glass-panel { background: color-mix(in srgb, var(--card) 96%, transparent); }
 }
+
+/* ── Hero block-editor mock ── */
+.hb-block {
+  opacity: 0;
+  animation: hb-block-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes hb-block-in {
+  from { opacity: 0; transform: translateY(14px) scale(0.98); }
+  to { opacity: 1; transform: none; }
+}
+/* the dropped block pulses when the cursor lands on it */
+.hb-drop { animation: hb-block-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards, hb-drop 6s ease-in-out infinite; }
+@keyframes hb-drop {
+  0%, 45%, 100% { outline-color: color-mix(in srgb, var(--text) 12%, transparent); background: transparent; }
+  55%, 75% { outline: 2px dashed var(--brand); background: color-mix(in srgb, var(--brand) 8%, transparent); }
+}
+.hb-cursor {
+  left: 2%; top: 20%; opacity: 0;
+  animation: hb-cursor 6s ease-in-out 1.55s infinite; /* same delay as the dropped block (i = 3) */
+}
+@keyframes hb-cursor {
+  0% { left: 2%; top: 20%; opacity: 0; }
+  12% { opacity: 1; }
+  50% { left: 52%; top: 86%; opacity: 1; }
+  75% { left: 52%; top: 86%; opacity: 1; }
+  90%, 100% { left: 58%; top: 92%; opacity: 0; }
+}
+.hb-ring {
+  stroke-dashoffset: 100;
+  animation: hb-ring 1.4s cubic-bezier(0.22, 1, 0.36, 1) 1.8s forwards;
+}
+@keyframes hb-ring { to { stroke-dashoffset: 6; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hb-block, .hb-drop { animation: none; opacity: 1; }
+  .hb-cursor { display: none; }
+  .hb-ring { animation: none; stroke-dashoffset: 6; }
+}

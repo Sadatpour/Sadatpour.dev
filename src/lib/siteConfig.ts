@@ -8,7 +8,7 @@ export const SITE_URL = 'https://sadatpour.dev'
 export const ENABLE_CODE_CANVAS = false
 
 /**
- * Hero layout. 'studio' = split layout with floating project cards (current).
+ * Hero layout. 'builder' = headline over an animated WordPress block-editor mock (current).
  * 'classic' = previous centred signature stage with orbiting tech logos.
  */
-export const HERO_VARIANT: 'studio' | 'classic' = 'studio'
+export const HERO_VARIANT: 'builder' | 'classic' = 'builder'
