@@ -253,5 +253,229 @@
       "Theme Engineering",
       "Performance"
     ]
+  },
+  {
+    "slug": "sorme-beauty",
+    "title": {
+      "en": "Sorme Beauty Directory"
+    },
+    "accent": "#fb7185",
+    "motif": "directory",
+    "kind": {
+      "fa": "دایرکتوری زیبایی",
+      "en": "Beauty directory",
+      "de": "Beauty-Verzeichnis",
+      "tr": "Güzellik rehberi",
+      "ar": "دليل التجميل",
+      "zh": "美容目录"
+    },
+    "url": "http://sormebeauty.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Plugin Development",
+      "Custom Theme"
+    ]
+  },
+  {
+    "slug": "msi-farsi",
+    "title": {
+      "en": "MSI Farsi"
+    },
+    "accent": "#dc2626",
+    "motif": "chip",
+    "kind": {
+      "fa": "انجمن فناوری",
+      "en": "Tech community",
+      "de": "Tech-Community",
+      "tr": "Teknoloji topluluğu",
+      "ar": "مجتمع تقني",
+      "zh": "科技社区"
+    },
+    "url": "https://msifarsi.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Community",
+      "Custom Theme"
+    ]
+  },
+  {
+    "slug": "parchat",
+    "title": {
+      "en": "Parchat"
+    },
+    "accent": "#22c55e",
+    "motif": "chat",
+    "kind": {
+      "fa": "پلتفرم گفتگو",
+      "en": "Chat platform",
+      "de": "Chat-Plattform",
+      "tr": "Sohbet platformu",
+      "ar": "منصة دردشة",
+      "zh": "聊天平台"
+    },
+    "url": "https://parchat.net/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Real-time",
+      "Custom Theme"
+    ]
+  },
+  {
+    "slug": "hub-game",
+    "title": {
+      "en": "Hub Game Store"
+    },
+    "accent": "#6366f1",
+    "motif": "gamepad",
+    "kind": {
+      "fa": "فروشگاه بازی",
+      "en": "Game store",
+      "de": "Games-Shop",
+      "tr": "Oyun mağazası",
+      "ar": "متجر ألعاب",
+      "zh": "游戏商店"
+    },
+    "url": "https://hubgamestore.com/",
+    "more": true,
+    "tags": [
+      "WooCommerce",
+      "Digital Products"
+    ]
+  },
+  {
+    "slug": "mirrogene",
+    "title": {
+      "en": "Mirrogene"
+    },
+    "accent": "#06b6d4",
+    "motif": "dna",
+    "kind": {
+      "fa": "سلامت",
+      "en": "Healthcare",
+      "de": "Gesundheit",
+      "tr": "Sağlık",
+      "ar": "الرعاية الصحية",
+      "zh": "医疗健康"
+    },
+    "url": "https://mirrogene.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Health"
+    ]
+  },
+  {
+    "slug": "unex-safety",
+    "title": {
+      "en": "Unex Safety"
+    },
+    "accent": "#facc15",
+    "motif": "shield",
+    "kind": {
+      "fa": "فروشگاه تجهیزات ایمنی",
+      "en": "Safety equipment store",
+      "de": "Shop für Sicherheitsausrüstung",
+      "tr": "İş güvenliği ekipmanı mağazası",
+      "ar": "متجر معدات السلامة",
+      "zh": "安全设备商店"
+    },
+    "url": "https://unexsafety.com/",
+    "more": true,
+    "tags": [
+      "WooCommerce",
+      "WordPress"
+    ]
+  },
+  {
+    "slug": "owj-digital",
+    "title": {
+      "en": "Owj Digital"
+    },
+    "accent": "#3b82f6",
+    "motif": "megaphone",
+    "kind": {
+      "fa": "آژانس دیجیتال",
+      "en": "Digital agency",
+      "de": "Digitalagentur",
+      "tr": "Dijital ajans",
+      "ar": "وكالة رقمية",
+      "zh": "数字代理"
+    },
+    "url": "https://owjdigital.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Agency",
+      "Portfolio"
+    ]
+  },
+  {
+    "slug": "rangineh",
+    "title": {
+      "en": "Rangineh Decoration"
+    },
+    "accent": "#c084fc",
+    "motif": "palette",
+    "kind": {
+      "fa": "دکوراسیون",
+      "en": "Decoration",
+      "de": "Dekoration",
+      "tr": "Dekorasyon",
+      "ar": "الديكور",
+      "zh": "装饰设计"
+    },
+    "url": "https://ranginehdecoration.ir/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Portfolio"
+    ]
+  },
+  {
+    "slug": "chameleon-bc",
+    "title": {
+      "en": "Chameleon BC"
+    },
+    "accent": "#84cc16",
+    "motif": "layout",
+    "kind": {
+      "fa": "وب‌سایت کسب‌وکار",
+      "en": "Business website",
+      "de": "Unternehmenswebsite",
+      "tr": "İşletme web sitesi",
+      "ar": "موقع أعمال",
+      "zh": "企业网站"
+    },
+    "url": "https://chameleonbc.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Elementor"
+    ]
+  },
+  {
+    "slug": "pejvak",
+    "title": {
+      "en": "Pejvak Co"
+    },
+    "accent": "#14b8a6",
+    "motif": "briefcase",
+    "kind": {
+      "fa": "وب‌سایت شرکتی",
+      "en": "Corporate website",
+      "de": "Firmenwebsite",
+      "tr": "Kurumsal web sitesi",
+      "ar": "موقع شركة",
+      "zh": "企业官网"
+    },
+    "url": "https://pejvakco.com/",
+    "more": true,
+    "tags": [
+      "WordPress",
+      "Business"
+    ]
   }
 ]
