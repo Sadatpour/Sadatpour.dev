@@ -75,8 +75,9 @@ function Visual({ proj, index, className, padding, children }: {
         className={`absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-[1.06] ${padding}`}
         style={{ color: proj.accent }}
       />
-      <span className="absolute top-3 end-4 font-mono text-[10px] sm:text-xs font-bold tabular-nums" dir="ltr" style={{ color: tint(proj.accent, 85) }}>
-        {indexLabel(index)}
+      {/* positioned in the page direction; only the digits are forced LTR */}
+      <span className="absolute top-3 end-4 font-mono text-[10px] sm:text-xs font-bold tabular-nums" style={{ color: tint(proj.accent, 85) }}>
+        <bdi dir="ltr">{indexLabel(index)}</bdi>
       </span>
       {children}
     </div>

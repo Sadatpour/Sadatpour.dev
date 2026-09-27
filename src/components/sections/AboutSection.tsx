@@ -68,8 +68,8 @@ function FocusCard({ f, index, levelLabel, className = '' }: { f: (typeof FOCUS)
             <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke={f.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{ICONS[f.icon!]}</svg>
           )}
         </span>
-        <span className="absolute top-2.5 end-3 font-mono text-[10px] font-bold tabular-nums" dir="ltr" style={{ color: tint(f.color, 85) }}>
-          {String(index + 1).padStart(2, '0')}
+        <span className="absolute top-2.5 end-3 font-mono text-[10px] font-bold tabular-nums" style={{ color: tint(f.color, 85) }}>
+          <bdi dir="ltr">{String(index + 1).padStart(2, '0')}</bdi>
         </span>
       </div>
       <div className="flex flex-1 flex-col items-center gap-1 px-3 pb-4 pt-2.5 text-center" dir="ltr">

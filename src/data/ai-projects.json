@@ -32,35 +32,35 @@
     ]
   },
   {
-    "slug": "deutsch",
+    "slug": "qotbnama",
     "title": {
-      "fa": "دویچ لرنن",
-      "en": "Deutsch Lernen"
+      "fa": "قطب‌نما",
+      "en": "Qotbnama"
     },
-    "accent": "#ef4444",
-    "motif": "lingo",
+    "accent": "#7c5cff",
+    "motif": "mind",
     "kind": {
-      "fa": "آموزش زبان",
-      "en": "Language learning",
-      "de": "Sprachenlernen",
-      "tr": "Dil öğrenimi",
-      "ar": "تعلّم اللغات",
-      "zh": "语言学习"
+      "fa": "تحلیل اندیشه",
+      "en": "Thinking analysis",
+      "de": "Denkanalyse",
+      "tr": "Düşünce analizi",
+      "ar": "تحليل التفكير",
+      "zh": "思维分析"
     },
     "desc": {
-      "fa": "پلتفرم آموزش زبان آلمانی (اتریشی) با تمرین‌های تعاملی.",
-      "en": "Austrian German learning platform with interactive practice.",
-      "de": "Lernplattform für österreichisches Deutsch mit interaktiven Übungen.",
-      "tr": "Etkileşimli alıştırmalarla Avusturya Almancası öğrenme platformu.",
-      "ar": "منصة لتعلّم الألمانية النمساوية بتمارين تفاعلية.",
-      "zh": "奥地利德语学习平台，提供互动练习。"
+      "fa": "اندیشه‌ات را بهتر بشناس؛ پلتفرمی برای شناخت و تحلیل شیوه‌ی اندیشیدن.",
+      "en": "Know your thoughts better — a platform for exploring and analyzing how you think.",
+      "de": "Verstehe dein Denken besser — eine Plattform zur Analyse der eigenen Denkweise.",
+      "tr": "Düşüncelerini daha iyi tanı — düşünme biçimini keşfetme ve analiz platformu.",
+      "ar": "اعرف أفكارك بشكل أفضل — منصة لاستكشاف طريقة تفكيرك وتحليلها.",
+      "zh": "更好地认识你的思维——探索与分析思维方式的平台。"
     },
-    "url": "https://sadatpour.dev/deutsch/",
+    "url": "https://qotbnama.vercel.app/",
     "featured": true,
     "tags": [
       "AI",
-      "Education",
-      "German"
+      "Mindset",
+      "Analysis"
     ]
   },
   {
@@ -95,34 +95,34 @@
     ]
   },
   {
-    "slug": "qotbnama",
+    "slug": "deutsch",
     "title": {
-      "fa": "قطب‌نما",
-      "en": "Qotbnama"
+      "fa": "دویچ لرنن",
+      "en": "Deutsch Lernen"
     },
-    "accent": "#7c5cff",
-    "motif": "mind",
+    "accent": "#ef4444",
+    "motif": "lingo",
     "kind": {
-      "fa": "تحلیل اندیشه",
-      "en": "Thinking analysis",
-      "de": "Denkanalyse",
-      "tr": "Düşünce analizi",
-      "ar": "تحليل التفكير",
-      "zh": "思维分析"
+      "fa": "آموزش زبان",
+      "en": "Language learning",
+      "de": "Sprachenlernen",
+      "tr": "Dil öğrenimi",
+      "ar": "تعلّم اللغات",
+      "zh": "语言学习"
     },
     "desc": {
-      "fa": "اندیشه‌ات را بهتر بشناس؛ پلتفرمی برای شناخت و تحلیل شیوه‌ی اندیشیدن.",
-      "en": "Know your thoughts better — a platform for exploring and analyzing how you think.",
-      "de": "Verstehe dein Denken besser — eine Plattform zur Analyse der eigenen Denkweise.",
-      "tr": "Düşüncelerini daha iyi tanı — düşünme biçimini keşfetme ve analiz platformu.",
-      "ar": "اعرف أفكارك بشكل أفضل — منصة لاستكشاف طريقة تفكيرك وتحليلها.",
-      "zh": "更好地认识你的思维——探索与分析思维方式的平台。"
+      "fa": "پلتفرم آموزش زبان آلمانی (اتریشی) با تمرین‌های تعاملی.",
+      "en": "Austrian German learning platform with interactive practice.",
+      "de": "Lernplattform für österreichisches Deutsch mit interaktiven Übungen.",
+      "tr": "Etkileşimli alıştırmalarla Avusturya Almancası öğrenme platformu.",
+      "ar": "منصة لتعلّم الألمانية النمساوية بتمارين تفاعلية.",
+      "zh": "奥地利德语学习平台，提供互动练习。"
     },
-    "url": "https://qotbnama.vercel.app/",
+    "url": "https://sadatpour.dev/deutsch/",
     "tags": [
       "AI",
-      "Mindset",
-      "Analysis"
+      "Education",
+      "German"
     ]
   },
   {
