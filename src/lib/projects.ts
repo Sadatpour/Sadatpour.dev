@@ -13,7 +13,7 @@ export interface Project {
       slug: 'nerkhito',
       title: 'Nerkhito Platform',
       url: 'https://nerkhito.ir/',
-      role: 'WordPress Engineer',
+      role: 'WordPress Developer',
       tags: ['WordPress', 'Plugin Development', 'Custom Theme'],
       category: 'wordpress',
       featured: true,
