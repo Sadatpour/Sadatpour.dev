@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "name": "Mojtaba Sadatpour",
+    "title": "Front-End Developer",
+    "subtitle": "Technical Consultant & Web Solutions Architect",
+    "cta_work": "View Projects",
+    "cta_contact": "Contact Me",
+    "scroll": "Scroll down",
+    "years_exp": "Years Exp.",
+    "clients": "Clients",
+    "projects": "Projects",
+    "open_for_work": "OPEN — For Work",
+    "open": "OPEN",
+    "for_work": "For Work"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "bio": "Web Developer & Technical Consultant focused on designing, developing, and optimizing digital solutions. Passionate about creating fast, scalable, and user-centric websites built on modern web standards.",
+    "location": "Tehran, Iran",
+    "available": "Available for freelance projects",
+    "core_focus": "Core Focus",
+    "focus_value": "Web app design & AI-powered websites",
+    "location_label": "Location",
+    "status_label": "Status",
+    "focus_label": "Focus",
+    "languages_header": "Languages",
+    "languages": {
+      "persian": "Persian",
+      "tabari": "Mazandarani (Tabari)",
+      "english": "English",
+      "german": "German",
+      "native": "Native",
+      "b1": "B1"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Tools & technologies I work with",
+    "frontend": "Frontend",
+    "tools": "Tools",
+    "design": "Design",
+    "stack": "Tech Constellation",
+    "level": "Proficiency",
+    "toolbelt": "Toolbelt",
+    "expert": "Expert",
+    "advanced": "Advanced",
+    "proficient": "Proficient"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "What I've built",
+    "view": "View Project",
+    "live": "Live Demo",
+    "github": "Source Code",
+    "ai_vibe": "AI Vibe",
+    "featured": "featured",
+    "show_more": "Show More",
+    "visit": "Visit Site",
+    "ai_intro": "Products designed & built with AI",
+    "client_projects": "Client Projects",
+    "client_intro": "A selection of websites I designed or support"
+  },
+  "experience": {
+    "title": "Some of My Work Experience",
+    "subtitle": "My professional journey",
+    "nerkhito": {
+      "role": "Co-Founder & Lead Developer",
+      "summary": "Led product engineering, architecture, and frontend performance for a pricing platform.",
+      "period": "Jan 2025 - Present"
+    },
+    "otaghak": {
+      "role": "Technical Support & Theme Developer",
+      "summary": "Built and maintained custom WordPress theme features and content performance workflows.",
+      "period": "2024 - Present"
+    },
+    "dalili": {
+      "role": "Technical Support & Theme Developer",
+      "summary": "Design, development, and technical support for Dalili Automotive Group's website with custom WordPress features.",
+      "period": "Mar 2026 - Present"
+    },
+    "shatel": {
+      "role": "Digital Products Support",
+      "summary": "Digital product support and management in the online store project of Shatel, a holding company in web, technology, and internet.",
+      "period": "2014 - 2016"
+    },
+    "freelance": {
+      "role": "Frontend Engineer",
+      "summary": "Delivered polished websites and interactive experiences for international clients.",
+      "period": "2016 - Present"
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's talk",
+    "social_intro": "Reach me through GitHub, LinkedIn, or Email.",
+    "location_note": "Tehran, Iran — Open for remote opportunities"
+  },
+  "footer": {
+    "bio": "Front-End Developer crafting beautiful and performant web experiences.",
+    "navigate": "Navigate",
+    "crafted_pfx": "Made with",
+    "crafted_sfx": "by Moji"
+  },
+  "theme": {
+    "dark": "Dark mode",
+    "light": "Light mode"
+  }
+}

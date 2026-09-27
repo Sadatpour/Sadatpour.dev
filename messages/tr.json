@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımda",
+    "skills": "Beceriler",
+    "projects": "Projeler",
+    "experience": "Deneyim",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "greeting": "Merhaba, ben",
+    "name": "Mojtaba Sadatpour",
+    "title": "Front-End Geliştirici",
+    "subtitle": "Teknik Danışman ve Web Çözümleri Mimarı",
+    "cta_work": "Projeleri Gör",
+    "cta_contact": "İletişime Geç",
+    "scroll": "Aşağı kaydır",
+    "years_exp": "Yıllık Deneyim",
+    "clients": "Müşteri",
+    "projects": "Proje",
+    "open_for_work": "AÇIK — İş İçin",
+    "open": "AÇIK",
+    "for_work": "İş İçin"
+  },
+  "about": {
+    "title": "Hakkımda",
+    "subtitle": "Beni daha iyi tanıyın",
+    "bio": "Web Geliştirici & Teknik Danışman, dijital çözümler tasarlama, geliştirme ve optimize etme odaklı. Modern web standartlarına dayalı hızlı, ölçeklenebilir ve kullanıcı odaklı web siteleri oluşturmaya tutkulu.",
+    "location": "Tahran, İran",
+    "available": "Freelance projeler için müsait",
+    "core_focus": "Ana Odak",
+    "focus_value": "Web uygulama tasarımı ve yapay zeka destekli web siteleri",
+    "location_label": "Konum",
+    "status_label": "Durum",
+    "focus_label": "Odak",
+    "languages_header": "Diller",
+    "languages": {
+      "persian": "Farsça",
+      "tabari": "Mazandarani (Tabari)",
+      "english": "İngilizce",
+      "german": "Almanca",
+      "native": "Ana dil",
+      "b1": "B1"
+    }
+  },
+  "skills": {
+    "title": "Beceriler",
+    "subtitle": "Araçlar & teknolojiler",
+    "frontend": "Frontend",
+    "tools": "Araçlar",
+    "design": "Tasarım",
+    "stack": "Teknoloji Kümesi",
+    "level": "Yetkinlik",
+    "toolbelt": "Araç Kutusu",
+    "expert": "Uzman",
+    "advanced": "İleri",
+    "proficient": "Yetkin"
+  },
+  "projects": {
+    "title": "Projeler",
+    "subtitle": "Neler inşa ettim",
+    "view": "Projeyi Gör",
+    "live": "Canlı Demo",
+    "github": "Kaynak Kodu",
+    "ai_vibe": "AI Vibe",
+    "featured": "öne çıkan",
+    "show_more": "Daha Fazla Göster",
+    "visit": "Siteyi Ziyaret Et",
+    "ai_intro": "Yapay zekâ ile tasarlanıp geliştirilen ürünler",
+    "client_projects": "Müşteri Projeleri",
+    "client_intro": "Tasarladığım veya desteklediğim web sitelerinden bir seçki"
+  },
+  "experience": {
+    "title": "Bazı İş Deneyimlerim",
+    "subtitle": "Profesyonel yolculuğum",
+    "nerkhito": {
+      "role": "Kurucu Ortak & Baş Geliştirici",
+      "summary": "Bir fiyatlandırma platformu için ürün mühendisliği, mimari ve ön uç performansına liderlik ettim.",
+      "period": "Ocak 2025 - Günümüz"
+    },
+    "otaghak": {
+      "role": "Teknik Destek & Tema Geliştirici",
+      "summary": "Özel WordPress tema özellikleri ve içerik performans iş akışları oluşturdum ve bakımını yaptım.",
+      "period": "2024 - Günümüz"
+    },
+    "dalili": {
+      "role": "Teknik Destek & Tema Geliştirici",
+      "summary": "Dalili Otomotiv Grubu web sitesinin tasarımı, geliştirilmesi ve özel WordPress özellikleriyle teknik desteği.",
+      "period": "Mart 2026 - Devam ediyor"
+    },
+    "shatel": {
+      "role": "Dijital Ürün Desteği",
+      "summary": "Web, teknoloji ve internet alanında faaliyet gösteren bir holding olan Shatel'in çevrimiçi mağaza projesinde dijital ürün desteği ve yönetimi.",
+      "period": "2014 - 2016"
+    },
+    "freelance": {
+      "role": "Ön Uç Mühendisi",
+      "summary": "Uluslararası müşteriler için profesyonel web siteleri ve etkileşimli deneyimler sundum.",
+      "period": "2016 - Günümüz"
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "subtitle": "Konuşalım",
+    "social_intro": "GitHub, LinkedIn veya E-posta üzerinden bana ulaşın.",
+    "location_note": "Tahran, İran — Uzaktan fırsatlara açık"
+  },
+  "footer": {
+    "bio": "Güzel ve performanslı web deneyimleri oluşturan Front-End Geliştirici.",
+    "navigate": "Gezinme",
+    "crafted_pfx": "Sevgiyle yapıldı",
+    "crafted_sfx": "Moji tarafından"
+  },
+  "theme": {
+    "dark": "Karanlık mod",
+    "light": "Aydınlık mod"
+  }
+}

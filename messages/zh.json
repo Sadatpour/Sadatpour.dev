@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我",
+    "skills": "技能",
+    "projects": "项目",
+    "experience": "工作经验",
+    "contact": "联系我"
+  },
+  "hero": {
+    "greeting": "你好，我是",
+    "name": "Mojtaba Sadatpour",
+    "title": "前端开发工程师",
+    "subtitle": "技术顾问与网络解决方案架构师",
+    "cta_work": "查看项目",
+    "cta_contact": "联系我",
+    "scroll": "向下滚动",
+    "years_exp": "年经验",
+    "clients": "客户",
+    "projects": "项目",
+    "open_for_work": "开放 — 寻求合作",
+    "open": "开放",
+    "for_work": "寻求合作"
+  },
+  "about": {
+    "title": "关于我",
+    "subtitle": "进一步了解我",
+    "bio": "Web 开发人员与技术顾问，专注于设计、开发和优化数字解决方案。热衷于基于现代 Web 标准创建快速、可扩展且以用户为中心的网站。",
+    "location": "德黑兰，伊朗",
+    "available": "接受自由职业项目",
+    "core_focus": "核心专长",
+    "focus_value": "Web 应用设计与 AI 驱动的网站",
+    "location_label": "位置",
+    "status_label": "状态",
+    "focus_label": "专注领域",
+    "languages_header": "语言",
+    "languages": {
+      "persian": "波斯语",
+      "tabari": "马赞达兰语（塔巴里语）",
+      "english": "英语",
+      "german": "德语",
+      "native": "母语",
+      "b1": "B1"
+    }
+  },
+  "skills": {
+    "title": "技能",
+    "subtitle": "我使用的工具和技术",
+    "frontend": "前端",
+    "tools": "工具",
+    "design": "设计",
+    "stack": "技术星系",
+    "level": "熟练度",
+    "toolbelt": "工具箱",
+    "expert": "专家",
+    "advanced": "进阶",
+    "proficient": "熟练"
+  },
+  "projects": {
+    "title": "项目",
+    "subtitle": "我构建的作品",
+    "view": "查看项目",
+    "live": "在线演示",
+    "github": "源代码",
+    "ai_vibe": "AI 风格",
+    "featured": "精选",
+    "show_more": "显示更多",
+    "visit": "访问网站",
+    "ai_intro": "借助 AI 设计与构建的产品",
+    "client_projects": "客户项目",
+    "client_intro": "我设计或维护的网站精选"
+  },
+  "experience": {
+    "title": "部分工作经历",
+    "subtitle": "我的职业历程",
+    "nerkhito": {
+      "role": "联合创始人 & 首席开发",
+      "summary": "负责定价平台的产品工程、架构和前端性能优化。",
+      "period": "2025年1月 - 至今"
+    },
+    "otaghak": {
+      "role": "技术支持 & 主题开发",
+      "summary": "构建和维护自定义WordPress主题功能及内容性能工作流。",
+      "period": "2024 - 至今"
+    },
+    "dalili": {
+      "role": "技术支持与主题开发",
+      "summary": "为 Dalili 汽车集团网站提供设计、开发与技术支持，并实现定制 WordPress 功能。",
+      "period": "2026年3月 - 至今"
+    },
+    "shatel": {
+      "role": "数字产品支持",
+      "summary": "在Shatel控股公司（网络、科技、互联网领域）的在线商店项目中提供数字产品支持和管理。",
+      "period": "2014 - 2016"
+    },
+    "freelance": {
+      "role": "前端工程师",
+      "summary": "为国际客户交付专业的网站和交互式体验。",
+      "period": "2016 - 至今"
+    }
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "让我们交流",
+    "social_intro": "通过 GitHub、LinkedIn 或电子邮件联系我。",
+    "location_note": "伊朗德黑兰 — 开放远程合作机会"
+  },
+  "footer": {
+    "bio": "专注于打造精美高性能 Web 体验的前端开发工程师",
+    "navigate": "导航",
+    "crafted_pfx": "用心",
+    "crafted_sfx": "Moji 制作"
+  },
+  "theme": {
+    "dark": "深色模式",
+    "light": "浅色模式"
+  }
+}

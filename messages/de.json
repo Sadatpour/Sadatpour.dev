@@ -1,0 +1,118 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "projects": "Projekte",
+    "experience": "Erfahrung",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "greeting": "Hallo, ich bin",
+    "name": "Mojtaba Sadatpour",
+    "title": "Front-End Entwickler",
+    "subtitle": "Technischer Berater & Architekt für Web-Lösungen",
+    "cta_work": "Projekte ansehen",
+    "cta_contact": "Kontakt aufnehmen",
+    "scroll": "Scrollen",
+    "years_exp": "Jahre Erfahrung",
+    "clients": "Kunden",
+    "projects": "Projekte",
+    "open_for_work": "OFFEN — Für Arbeit",
+    "open": "OFFEN",
+    "for_work": "Für Arbeit"
+  },
+  "about": {
+    "title": "Über mich",
+    "subtitle": "Lernen Sie mich kennen",
+    "bio": "Webentwickler & Technischer Berater mit Fokus auf Design, Entwicklung und Optimierung digitaler Lösungen. Leidenschaftlich daran interessiert, schnelle, skalierbare und benutzerzentrierte Websites nach modernen Webstandards zu erstellen.",
+    "location": "Teheran, Iran",
+    "available": "Verfügbar für Freelance-Projekte",
+    "core_focus": "Kernkompetenzen",
+    "focus_value": "Web-App-Design und KI-gestützte Websites",
+    "location_label": "Standort",
+    "status_label": "Status",
+    "focus_label": "Fokus",
+    "languages_header": "Sprachen",
+    "languages": {
+      "persian": "Persisch",
+      "tabari": "Mazandarani (Tabari)",
+      "english": "Englisch",
+      "german": "Deutsch",
+      "native": "Muttersprache",
+      "b1": "B1"
+    }
+  },
+  "skills": {
+    "title": "Fähigkeiten",
+    "subtitle": "Werkzeuge & Technologien",
+    "frontend": "Frontend",
+    "tools": "Tools",
+    "design": "Design",
+    "stack": "Tech-Konstellation",
+    "level": "Kompetenz",
+    "toolbelt": "Werkzeugkasten",
+    "expert": "Experte",
+    "advanced": "Fortgeschritten",
+    "proficient": "Versiert"
+  },
+  "projects": {
+    "title": "Projekte",
+    "subtitle": "Was ich gebaut habe",
+    "view": "Projekt ansehen",
+    "live": "Live Demo",
+    "github": "Quellcode",
+    "ai_vibe": "KI Vibe",
+    "featured": "hervorgehoben",
+    "show_more": "Mehr anzeigen",
+    "visit": "Website besuchen",
+    "ai_intro": "Mit KI entworfene und gebaute Produkte",
+    "client_projects": "Kundenprojekte",
+    "client_intro": "Eine Auswahl von Websites, die ich gestaltet oder betreut habe"
+  },
+  "experience": {
+    "title": "Einige meiner Berufserfahrungen",
+    "subtitle": "Mein Berufsweg",
+    "nerkhito": {
+      "role": "Mitgründer & Lead-Entwickler",
+      "summary": "Leitung der Produktentwicklung, Architektur und Frontend-Performance für eine Preisplattform.",
+      "period": "Jan 2025 - Heute"
+    },
+    "otaghak": {
+      "role": "Technischer Support & Theme-Entwickler",
+      "summary": "Entwicklung und Wartung von benutzerdefinierten WordPress-Theme-Funktionen und Content-Performance-Workflows.",
+      "period": "2024 - Heute"
+    },
+    "dalili": {
+      "role": "Technischer Support & Theme-Entwickler",
+      "summary": "Design, Entwicklung und technischer Support der Website der Dalili Automotive Group mit individuellen WordPress-Funktionen.",
+      "period": "März 2026 - Heute"
+    },
+    "shatel": {
+      "role": "Support für digitale Produkte",
+      "summary": "Betreuung und Verwaltung digitaler Produkte im Onlineshop-Projekt der Shatel-Holding (Web, Technologie, Internet).",
+      "period": "2014 - 2016"
+    },
+    "freelance": {
+      "role": "Frontend-Ingenieur",
+      "summary": "Lieferung hochwertiger Websites und interaktiver Erlebnisse für internationale Kunden.",
+      "period": "2016 - Heute"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Lass uns reden",
+    "social_intro": "Erreichen Sie mich über GitHub, LinkedIn oder E-Mail.",
+    "location_note": "Teheran, Iran — Offen für Remote-Möglichkeiten"
+  },
+  "footer": {
+    "bio": "Front-End Entwickler, der schöne und performante Web-Erlebnisse schafft.",
+    "navigate": "Navigation",
+    "crafted_pfx": "Gemacht mit",
+    "crafted_sfx": "von Moji"
+  },
+  "theme": {
+    "dark": "Dunkelmodus",
+    "light": "Hellmodus"
+  }
+}
