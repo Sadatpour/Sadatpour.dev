@@ -250,6 +250,50 @@ const MOTIFS: Record<string, ReactNode> = {
     </>
   ),
 
+  // ── Contact channels ──
+  // Email: envelope with a paper plane on a dashed flight path
+  mail: (
+    <>
+      <rect className="sc-draw" pathLength={1} x="60" y="52" width="120" height="80" rx="10" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.1" />
+      <path d="M62 56l58 42 58-42" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" />
+      <path d="M62 130l40-34M178 130l-40-34" stroke="currentColor" strokeOpacity="0.4" strokeWidth="1.5" />
+      <path className="sc-draw" d="M184 78c30-4 50-24 70-44" stroke="currentColor" strokeOpacity="0.6" strokeWidth="2" strokeDasharray="5 6" strokeLinecap="round" />
+      <g className="sc-float">
+        <path d="M252 20l40 14-26 8-6 22-8-20z" fill="currentColor" fillOpacity="0.85" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+        <path d="M266 42l-14-22" stroke="var(--card)" strokeWidth="1.5" />
+      </g>
+      {[[30, 40], [36, 120], [220, 136]].map(([x, y], i) => <circle key={i} className="sc-pulse" cx={x} cy={y} r="3" fill="currentColor" />)}
+    </>
+  ),
+  // GitHub: commit graph with a merged branch
+  git: (
+    <>
+      <path d="M40 110h240" stroke="currentColor" strokeOpacity="0.45" strokeWidth="2.5" strokeLinecap="round" />
+      <path className="sc-draw" pathLength={1} d="M90 110c0-40 20-56 50-56h60c30 0 50 16 50 56" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+      {[60, 90, 170, 250].map(x => <circle key={x} cx={x} cy="110" r="8" fill="var(--card)" stroke="currentColor" strokeWidth="2.5" />)}
+      {[140, 200].map(x => <circle key={x} cx={x} cy="54" r="8" fill="currentColor" fillOpacity="0.8" />)}
+      <circle cx="280" cy="110" r="5" fill="currentColor" className="sc-pulse" />
+      {[0, 1, 2, 3, 4, 5, 6].map(i => (
+        <rect key={i} x={40 + i * 14} y="20" width="10" height="10" rx="2" fill="currentColor" fillOpacity={[0.2, 0.5, 0.3, 0.8, 0.4, 0.9, 0.6][i]} />
+      ))}
+    </>
+  ),
+  // LinkedIn: profile card linked to a network of contacts
+  network: (
+    <>
+      {[[40, 36], [52, 126], [270, 32], [284, 118], [160, 18]].map(([x, y], i) => (
+        <g key={i}>
+          <path d={`M160 80L${x} ${y}`} stroke="currentColor" strokeOpacity="0.25" strokeDasharray="4 4" />
+          <circle cx={x} cy={y} r="10" fill="currentColor" fillOpacity="0.2" stroke="currentColor" strokeOpacity="0.5" />
+          <circle cx={x} cy={y - 2} r="3.5" fill="currentColor" fillOpacity="0.7" />
+        </g>
+      ))}
+      <rect className="sc-draw" pathLength={1} x="112" y="50" width="96" height="64" rx="10" stroke="currentColor" strokeWidth="2.5" fill="var(--card)" />
+      <circle cx="136" cy="76" r="10" fill="currentColor" fillOpacity="0.8" />
+      <path d="M154 70h40M154 82h26M124 100h72" stroke="currentColor" strokeOpacity="0.5" strokeWidth="3" strokeLinecap="round" />
+    </>
+  ),
+
   // ── AI projects ──
   // Startup community: product cards with upvotes and a rocket
   launch: (

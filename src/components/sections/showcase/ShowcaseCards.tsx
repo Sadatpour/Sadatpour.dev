@@ -224,7 +224,7 @@ export function ShowcaseHeader({ badge, badgeColor, icon, title, intro, stats = 
         <div className="flex gap-3">
           {stats.map(stat => (
             <div key={stat.label} className="rounded-2xl border px-5 py-3 text-center" style={{ background: 'var(--card)', borderColor: 'var(--border)' }}>
-              <div className="text-2xl sm:text-3xl font-black tabular-nums" dir="ltr" style={{ color: badgeColor }}>{stat.value}</div>
+              <div className="text-2xl sm:text-3xl font-black tabular-nums" style={{ color: badgeColor }}>{stat.value}</div>
               <div className="mt-0.5 text-[11px] font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
             </div>
           ))}

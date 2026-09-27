@@ -53,14 +53,7 @@ export default function Navbar({ theme, onThemeToggle, activeSection }: Props) {
   return (
     <nav dir={isRTL ? 'rtl' : 'ltr'} className="fixed top-0 left-0 right-0 z-50 px-4 pt-3 max-sm:mb-[60px]">
       <div
-        className="mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-3 py-2 transition-all duration-300"
-        style={{
-          background: scrolled ? 'color-mix(in srgb, var(--card) 82%, transparent)' : 'transparent',
-          borderColor: scrolled ? 'var(--border)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-          boxShadow: scrolled ? 'var(--shadow)' : 'none',
-        }}
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-2xl border px-3 py-2 transition-all duration-300 ${scrolled ? 'glass-bar' : 'border-transparent'}`}
       >
         <Link href={`/${locale}#hero`} className="flex items-center shrink-0">
           <Image src="/MY-Signture.png" alt="Sadatpour" width={240} height={60}
@@ -115,13 +108,8 @@ export default function Navbar({ theme, onThemeToggle, activeSection }: Props) {
             </button>
             {langOpen && (
               <div
-                className="absolute top-12 z-50 min-w-[150px] overflow-hidden rounded-xl border-2"
-                style={{
-                  background: isDark ? '#1a1a1a' : '#ffffff',
-                  borderColor: 'var(--border)',
-                  boxShadow: 'var(--shadow-lg)',
-                  [isRTL ? 'left' : 'right']: 0,
-                }}
+                className="glass-panel absolute top-12 z-50 min-w-[150px] overflow-hidden rounded-xl border"
+                style={{ [isRTL ? 'left' : 'right']: 0 }}
               >
                 {LOCALES.map((item) => (
                   <button key={item.code} type="button" onClick={() => switchLocale(item.code)}
@@ -155,14 +143,7 @@ export default function Navbar({ theme, onThemeToggle, activeSection }: Props) {
       </div>
 
       {menuOpen && (
-        <div
-          className="mx-auto mt-2 max-w-6xl rounded-xl border-2 overflow-hidden"
-          style={{
-            background: isDark ? '#1a1a1a' : '#ffffff',
-            borderColor: 'var(--border)',
-            boxShadow: 'var(--shadow-lg)',
-          }}
-        >
+        <div className="glass-panel mx-auto mt-2 max-w-6xl overflow-hidden rounded-xl border">
           {items.map((item) => (
             <a key={item.id} href={`#${item.id}`} onClick={() => setMenuOpen(false)}
               className="flex items-center justify-between px-4 py-3 text-sm font-medium"

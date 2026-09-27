@@ -30,7 +30,7 @@ export default function WordPressShowcase() {
         title={t('wp_title')}
         intro={t('wp_intro')}
         stats={[
-          { value: String(WP_PROJECTS.length), label: th('projects') },
+          { value: `${WP_PROJECTS.length}+`, label: th('projects') },
           { value: '15+', label: th('years_exp') },
         ]}
       />
