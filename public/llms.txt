@@ -1,7 +1,7 @@
 # Mojtaba Sadatpour — Front-End Developer & Technical Consultant
 
 > Portfolio of Mojtaba Sadatpour (مجتبا سادات‌پور): a front-end developer and web
-> solutions architect specializing in WordPress, PHP, JavaScript, and
+> solutions architect specializing in WordPress, JavaScript, and
 > AI-powered development. Based in Tehran, Iran. Available for remote freelance work.
 
 ## About
@@ -13,8 +13,10 @@
 - Languages: Persian (native), Mazandarani/Tabari (native), English (B1), German (B1)
 
 ## Skills
-JavaScript, Tailwind CSS, CSS3, HTML5, WordPress, PHP,
+JavaScript, Tailwind CSS, CSS3, HTML5, WordPress,
 MySQL, Git/GitHub, Figma, Elementor, GSAP motion, REST APIs.
+
+Familiar with: PHP, React, Next.js.
 
 ## Selected AI Products
 - NoJast (nojast.ir) — home of Iranian products & startups

@@ -26,6 +26,8 @@ const FOCUS = [
   { label: 'Performance', sub: 'SPEED · SEO', color: '#FF6B6B', icon: 'perf' },
   { label: 'UI Motion', sub: 'GSAP · SCROLL', color: '#88CE02', icon: 'motion' },
   { label: 'Design', sub: 'UI · UX', color: '#F59E0B', icon: 'design' },
+  { label: 'React / Next', sub: 'SPA · SSR', color: '#61DAFB', logo: 'react', level: 'familiar' },
+  { label: 'PHP', sub: 'SERVER · WP', color: '#777BB4', logo: 'php', level: 'familiar' },
 ]
 
 const LANGUAGES = [
@@ -48,7 +50,7 @@ const cardStyle = {
   WebkitBackdropFilter: 'blur(12px)',
 } as const
 
-function FocusCard({ f, index, className = '' }: { f: (typeof FOCUS)[number]; index: number; className?: string }) {
+function FocusCard({ f, index, levelLabel, className = '' }: { f: (typeof FOCUS)[number]; index: number; levelLabel?: string; className?: string }) {
   return (
     <div className={`foc-pill sc-card sc-card-link group relative flex flex-col overflow-hidden rounded-2xl border ${className}`}
       style={{ '--acc': f.color, background: 'var(--card)' } as CSSProperties}
@@ -73,6 +75,12 @@ function FocusCard({ f, index, className = '' }: { f: (typeof FOCUS)[number]; in
       <div className="flex flex-1 flex-col items-center gap-1 px-3 pb-4 pt-2.5 text-center" dir="ltr">
         <span className="text-[13px] sm:text-sm font-black leading-tight" style={{ color: 'var(--text)' }}>{f.label}</span>
         <span className="font-mono text-[9px] font-bold uppercase tracking-wider" style={{ color: `color-mix(in srgb, ${f.color} 70%, var(--text))` }}>{f.sub}</span>
+        {levelLabel && (
+          <span className="mt-1 rounded-full px-2 py-0.5 text-[9px] font-bold" dir="auto"
+            style={{ color: '#f59e0b', background: tint('#f59e0b', 14), boxShadow: `inset 0 0 0 1px ${tint('#f59e0b', 30)}` }}>
+            {levelLabel}
+          </span>
+        )}
       </div>
     </div>
   )
@@ -101,6 +109,7 @@ function TehranClock({ locale }: { locale: string }) {
 export default function AboutSection() {
   const t = useTranslations('about')
   const th = useTranslations('hero')
+  const ts = useTranslations('skills')
   const locale = useLocale()
   const isRTL = useIsRTL()
   const ref = useRef<HTMLElement>(null)
@@ -181,10 +190,10 @@ export default function AboutSection() {
               </p>
               <span className="h-px flex-1" style={{ background: 'var(--border)' }} />
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
               {FOCUS.map((f, i) => (
                 // an odd last card spans the full row in the 2-column mobile grid
-                <FocusCard key={f.label} f={f} index={i}
+                <FocusCard key={f.label} f={f} index={i} levelLabel={f.level ? ts(f.level) : undefined}
                   className={i === FOCUS.length - 1 && FOCUS.length % 2 ? 'col-span-2 sm:col-span-1' : ''} />
               ))}
             </div>

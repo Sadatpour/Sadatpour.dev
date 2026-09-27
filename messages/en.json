@@ -54,7 +54,8 @@
     "toolbelt": "Toolbelt",
     "expert": "Expert",
     "advanced": "Advanced",
-    "proficient": "Proficient"
+    "proficient": "Proficient",
+    "familiar": "Familiar"
   },
   "projects": {
     "title": "Projects",
