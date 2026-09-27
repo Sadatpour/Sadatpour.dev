@@ -153,7 +153,7 @@ Open [http://localhost:3000/fa](http://localhost:3000/fa) in your browser.
 
 | Project | Category | Role |
 |---------|----------|------|
-| Nerkhito Platform | WordPress | Co-Founder, Design & Support |
+| Nerkhito Platform | WordPress | WordPress Engineer |
 | Otaghak Blog | WordPress | Technical Support |
 | Dalili Group | WordPress | Design & Technical Support |
 | Ibamo Store | WordPress | Design & Technical Support |

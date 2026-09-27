@@ -22,7 +22,7 @@ MySQL, Git/GitHub, Figma, Elementor, GSAP motion, REST APIs.
 - Deutsch Lernen (sadatpour.dev/deutsch) — Austrian German learning platform
 
 ## Selected Work Experience
-- Nerkhito — Co-Founder & Lead Developer
+- Nerkhito — WordPress Engineer
 - Otaghak — Technical Support & Theme Developer
 - Dalili Automotive Group — Technical Support & Theme Developer (since Mar 2026)
 - Shatel — Digital Products Support
