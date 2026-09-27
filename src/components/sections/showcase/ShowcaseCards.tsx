@@ -204,7 +204,7 @@ export function ShowcaseHeader({ badge, badgeColor, icon, title, intro, stats = 
   badge: string
   badgeColor: string
   icon: ReactNode
-  title: string
+  title?: string
   intro: string
   stats?: { value: string; label: string }[]
 }) {
@@ -217,8 +217,10 @@ export function ShowcaseHeader({ badge, badgeColor, icon, title, intro, stats = 
           {icon}
           <span className="text-[10px] font-bold uppercase tracking-[0.25em]">{badge}</span>
         </span>
-        <h3 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight" style={{ color: 'var(--text)' }}>{title}</h3>
-        <p className="mt-2 max-w-lg text-sm sm:text-base" style={{ color: 'var(--text-muted)' }}>{intro}</p>
+        {title && (
+          <h3 className="mt-4 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight" style={{ color: 'var(--text)' }}>{title}</h3>
+        )}
+        <p className={`${title ? 'mt-2' : 'mt-3'} max-w-lg text-sm sm:text-base`} style={{ color: 'var(--text-muted)' }}>{intro}</p>
       </div>
       {stats.length > 0 && (
         <div className="flex gap-3">

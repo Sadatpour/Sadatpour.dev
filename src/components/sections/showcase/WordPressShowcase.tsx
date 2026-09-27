@@ -27,7 +27,6 @@ export default function WordPressShowcase() {
         badge="WordPress"
         badgeColor={WP_ACCENT}
         icon={<svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2"><path d={FILTER_META.wordpress.icon} /></svg>}
-        title={t('wp_title')}
         intro={t('wp_intro')}
         stats={[
           { value: `${WP_PROJECTS.length}+`, label: th('projects') },
