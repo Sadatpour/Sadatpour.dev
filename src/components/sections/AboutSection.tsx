@@ -22,8 +22,6 @@ const ICONS: Record<string, ReactNode> = {
 // core-focus areas — capability cards (no percentages)
 const FOCUS = [
   { label: 'WordPress', sub: 'THEMES · PLUGINS', color: '#21759B', logo: 'wordpress' },
-  { label: 'React / Next', sub: 'SPA · SSR', color: '#61DAFB', logo: 'react' },
-  { label: 'TypeScript', sub: 'TYPES · DX', color: '#3178C6', logo: 'typescript' },
   { label: 'AI Coding', sub: 'PROMPT-DRIVEN', color: '#7C5CFF', icon: 'ai' },
   { label: 'Performance', sub: 'SPEED · SEO', color: '#FF6B6B', icon: 'perf' },
   { label: 'UI Motion', sub: 'GSAP · SCROLL', color: '#88CE02', icon: 'motion' },
@@ -183,7 +181,7 @@ export default function AboutSection() {
               </p>
               <span className="h-px flex-1" style={{ background: 'var(--border)' }} />
             </div>
-            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
               {FOCUS.map((f, i) => (
                 // an odd last card spans the full row in the 2-column mobile grid
                 <FocusCard key={f.label} f={f} index={i}

@@ -14,10 +14,10 @@ const CHIPS = [
 
 // real tech logos riding the two orbit rings (percent positions on the ring box)
 const ORBIT_OUTER = [
-  { tech: TECH.react, x: 50, y: 0 },
+  { tech: TECH.elementor, x: 50, y: 0 },
   { tech: TECH.wordpress, x: 100, y: 50 },
-  { tech: TECH.nextjs, x: 50, y: 100 },
-  { tech: TECH.typescript, x: 0, y: 50 },
+  { tech: TECH.php, x: 50, y: 100 },
+  { tech: TECH.html5, x: 0, y: 50 },
 ]
 const ORBIT_INNER = [
   { tech: TECH.tailwind, x: 100, y: 50 },

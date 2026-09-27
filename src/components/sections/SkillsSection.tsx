@@ -12,11 +12,11 @@ gsap.registerPlugin(ScrollTrigger)
 
 // nodes placed around the hub (percent coordinates)
 const NODES = [
-  { key: 'react', x: 16, y: 22 },
-  { key: 'typescript', x: 50, y: 12 },
+  { key: 'elementor', x: 16, y: 22 },
+  { key: 'javascript', x: 50, y: 12 },
   { key: 'wordpress', x: 84, y: 22 },
   { key: 'tailwind', x: 14, y: 74 },
-  { key: 'nextjs', x: 50, y: 88 },
+  { key: 'html5', x: 50, y: 88 },
   { key: 'php', x: 86, y: 74 },
 ]
 
@@ -24,14 +24,11 @@ const NODES = [
 const TIERS = [
   { key: 'wordpress', tier: 'expert' },
   { key: 'tailwind', tier: 'expert' },
-  { key: 'react', tier: 'advanced' },
-  { key: 'nextjs', tier: 'advanced' },
-  { key: 'typescript', tier: 'advanced' },
   { key: 'php', tier: 'proficient' },
 ]
 
 // full toolbelt grid
-const GRID = ['react', 'nextjs', 'typescript', 'javascript', 'tailwind', 'css3', 'html5', 'wordpress', 'php', 'github', 'figma', 'elementor']
+const GRID = ['javascript', 'tailwind', 'css3', 'html5', 'wordpress', 'php', 'github', 'figma', 'elementor']
 
 const cardStyle = {
   background: 'color-mix(in srgb, var(--card) 82%, transparent)',
@@ -179,7 +176,7 @@ export default function SkillsSection() {
           {/* ── toolbelt logo grid ── */}
           <div className="sk-card relative overflow-hidden rounded-3xl border p-5 sm:p-6 lg:col-span-3" style={cardStyle}>
             <CardLabel color="#00d4aa" text={t('toolbelt')} />
-            <div className="sk-grid grid grid-cols-4 gap-2.5 sm:grid-cols-6 sm:gap-3 lg:grid-cols-12">
+            <div className="sk-grid grid grid-cols-3 gap-2.5 sm:gap-3 md:grid-cols-9">
               {GRID.map(key => {
                 const tech = TECH[key]
                 return (
