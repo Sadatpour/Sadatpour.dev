@@ -17,7 +17,7 @@ const EXPS = [
     icon: 'M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-1h12v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-8l-2.08-5.99zM6.5 15a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm11 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 11l1.5-4.5h11L19 11H5z' },
   { key: 'shatel', name: 'Shatel', color: '#7C5CFF', tags: ['E-Commerce', 'Support', 'Digital Products'],
     icon: 'M5 12a7 7 0 1 1 14 0M5 12a7 7 0 0 0 14 0M12 2v20M2 12h20' },
-  { key: 'freelance', name: 'Freelance', color: '#00d4aa', tags: ['React', 'Next.js', 'UI Motion'],
+  { key: 'freelance', name: 'Freelance', color: '#00d4aa', tags: ['WordPress', 'UI Motion'],
     icon: 'M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5' },
 ]
 

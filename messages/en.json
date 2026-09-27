@@ -54,7 +54,8 @@
     "toolbelt": "Toolbelt",
     "expert": "Expert",
     "advanced": "Advanced",
-    "proficient": "Proficient"
+    "proficient": "Proficient",
+    "familiar": "Familiar"
   },
   "projects": {
     "title": "Projects",
@@ -62,19 +63,21 @@
     "view": "View Project",
     "live": "Live Demo",
     "github": "Source Code",
+    "wp_intro": "Platforms and stores I engineered with WordPress & WooCommerce",
+    "wp_more": "More WordPress Projects",
     "ai_vibe": "AI Vibe",
     "featured": "featured",
     "show_more": "Show More",
     "visit": "Visit Site",
     "ai_intro": "Products designed & built with AI",
-    "client_projects": "Client Projects",
+    "client_projects": "More Projects",
     "client_intro": "A selection of websites I designed or support"
   },
   "experience": {
     "title": "Some of My Work Experience",
     "subtitle": "My professional journey",
     "nerkhito": {
-      "role": "Co-Founder & Lead Developer",
+      "role": "WordPress Developer",
       "summary": "Led product engineering, architecture, and frontend performance for a pricing platform.",
       "period": "Jan 2025 - Present"
     },

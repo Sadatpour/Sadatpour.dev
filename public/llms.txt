@@ -1,7 +1,7 @@
 # Mojtaba Sadatpour — Front-End Developer & Technical Consultant
 
 > Portfolio of Mojtaba Sadatpour (مجتبا سادات‌پور): a front-end developer and web
-> solutions architect specializing in React, Next.js, TypeScript, WordPress, and
+> solutions architect specializing in WordPress, JavaScript, and
 > AI-powered development. Based in Tehran, Iran. Available for remote freelance work.
 
 ## About
@@ -9,12 +9,14 @@
 - Role: Front-End Developer, Technical Consultant, Web Solutions Architect
 - Location: Tehran, Iran (remote worldwide)
 - Experience: 15+ years, 50+ clients, 50+ projects
-- Focus: WordPress development, AI-powered "vibe" coding, React/Next.js, web performance, UI/UX motion, architectural design, TypeScript
+- Focus: WordPress development, AI-powered "vibe" coding, web performance, UI/UX motion, architectural design
 - Languages: Persian (native), Mazandarani/Tabari (native), English (B1), German (B1)
 
 ## Skills
-React, Next.js, TypeScript, JavaScript, Tailwind CSS, CSS3, HTML5, WordPress, PHP,
+JavaScript, Tailwind CSS, CSS3, HTML5, WordPress,
 MySQL, Git/GitHub, Figma, Elementor, GSAP motion, REST APIs.
+
+Familiar with: PHP, React, Next.js.
 
 ## Selected AI Products
 - NoJast (nojast.ir) — home of Iranian products & startups
@@ -22,7 +24,7 @@ MySQL, Git/GitHub, Figma, Elementor, GSAP motion, REST APIs.
 - Deutsch Lernen (sadatpour.dev/deutsch) — Austrian German learning platform
 
 ## Selected Work Experience
-- Nerkhito — Co-Founder & Lead Developer
+- Nerkhito — WordPress Developer
 - Otaghak — Technical Support & Theme Developer
 - Dalili Automotive Group — Technical Support & Theme Developer (since Mar 2026)
 - Shatel — Digital Products Support

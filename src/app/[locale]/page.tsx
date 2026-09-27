@@ -7,8 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from '@/components/ui/Navbar'
 import SignatureStamp from '@/components/ui/SignatureStamp'
 import CodeScrollCanvas from '@/components/canvas/CodeScrollCanvas'
-import { ENABLE_CODE_CANVAS } from '@/lib/siteConfig'
+import { ENABLE_CODE_CANVAS, HERO_VARIANT } from '@/lib/siteConfig'
 import HeroSection from '@/components/sections/HeroSection'
+import HeroSectionClassic from '@/components/sections/HeroSectionClassic'
 import AboutSection from '@/components/sections/AboutSection'
 import SkillsSection from '@/components/sections/SkillsSection'
 import ProjectsSection from '@/components/sections/ProjectsSection'
@@ -94,7 +95,7 @@ export default function HomePage() {
       <Navbar theme={theme} onThemeToggle={toggleTheme} activeSection={activeSection} />
 
       <main className="relative z-20 w-full max-sm:pt-[60px]">
-        <HeroSection />
+        {HERO_VARIANT === 'classic' ? <HeroSectionClassic /> : <HeroSection />}
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />

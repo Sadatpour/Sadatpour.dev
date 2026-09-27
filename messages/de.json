@@ -54,7 +54,8 @@
     "toolbelt": "Werkzeugkasten",
     "expert": "Experte",
     "advanced": "Fortgeschritten",
-    "proficient": "Versiert"
+    "proficient": "Versiert",
+    "familiar": "Grundkenntnisse"
   },
   "projects": {
     "title": "Projekte",
@@ -62,19 +63,21 @@
     "view": "Projekt ansehen",
     "live": "Live Demo",
     "github": "Quellcode",
+    "wp_intro": "Plattformen und Shops, die ich mit WordPress & WooCommerce entwickelt habe",
+    "wp_more": "Weitere WordPress-Projekte",
     "ai_vibe": "KI Vibe",
     "featured": "hervorgehoben",
     "show_more": "Mehr anzeigen",
     "visit": "Website besuchen",
     "ai_intro": "Mit KI entworfene und gebaute Produkte",
-    "client_projects": "Kundenprojekte",
+    "client_projects": "Weitere Projekte",
     "client_intro": "Eine Auswahl von Websites, die ich gestaltet oder betreut habe"
   },
   "experience": {
     "title": "Einige meiner Berufserfahrungen",
     "subtitle": "Mein Berufsweg",
     "nerkhito": {
-      "role": "Mitgründer & Lead-Entwickler",
+      "role": "WordPress-Entwickler",
       "summary": "Leitung der Produktentwicklung, Architektur und Frontend-Performance für eine Preisplattform.",
       "period": "Jan 2025 - Heute"
     },

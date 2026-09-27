@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import Image from 'next/image'
 import { useLocale, useTranslations, useIsRTL } from '@/i18n/I18nProvider'
 import SectionHeader from '@/components/ui/SectionHeader'
 import { TECH } from '@/lib/techLogos'
 import { localizeDigits } from '@/lib/format'
+import { tint } from '@/components/sections/showcase/ShowcaseCards'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -18,15 +19,15 @@ const ICONS: Record<string, ReactNode> = {
   design: <><path d="M12 3l8 4-8 4-8-4z" /><path d="M4 11l8 4 8-4M4 15l8 4 8-4" /></>,
 }
 
-// core-focus areas — scattered "capability" pills (no percentages)
+// core-focus areas — capability cards (no percentages)
 const FOCUS = [
-  { label: 'WordPress', sub: 'THEMES · PLUGINS', color: '#21759B', logo: 'wordpress', pos: 'top-[4%] left-[26%]' },
-  { label: 'React / Next', sub: 'SPA · SSR', color: '#61DAFB', logo: 'react', pos: 'top-[24%] left-[1%]' },
-  { label: 'TypeScript', sub: 'TYPES · DX', color: '#3178C6', logo: 'typescript', pos: 'top-[64%] left-[0%]' },
-  { label: 'AI Coding', sub: 'PROMPT-DRIVEN', color: '#7C5CFF', icon: 'ai', pos: 'top-[88%] left-[20%]' },
-  { label: 'Performance', sub: 'SPEED · SEO', color: '#FF6B6B', icon: 'perf', pos: 'top-[20%] right-[1%]' },
-  { label: 'UI Motion', sub: 'GSAP · SCROLL', color: '#88CE02', icon: 'motion', pos: 'top-[60%] right-[0%]' },
-  { label: 'Design', sub: 'UI · UX', color: '#F59E0B', icon: 'design', pos: 'top-[88%] right-[22%]' },
+  { label: 'WordPress', sub: 'THEMES · PLUGINS', color: '#21759B', logo: 'wordpress' },
+  { label: 'AI Coding', sub: 'PROMPT-DRIVEN', color: '#7C5CFF', icon: 'ai' },
+  { label: 'Performance', sub: 'SPEED · SEO', color: '#FF6B6B', icon: 'perf' },
+  { label: 'UI Motion', sub: 'GSAP · SCROLL', color: '#88CE02', icon: 'motion' },
+  { label: 'Design', sub: 'UI · UX', color: '#F59E0B', icon: 'design' },
+  { label: 'React / Next', sub: 'SPA · SSR', color: '#61DAFB', logo: 'react', level: 'familiar' },
+  { label: 'PHP', sub: 'SERVER · WP', color: '#777BB4', logo: 'php', level: 'familiar' },
 ]
 
 const LANGUAGES = [
@@ -49,23 +50,39 @@ const cardStyle = {
   WebkitBackdropFilter: 'blur(12px)',
 } as const
 
-function FocusPill({ f }: { f: (typeof FOCUS)[number] }) {
+function FocusCard({ f, index, levelLabel, className = '' }: { f: (typeof FOCUS)[number]; index: number; levelLabel?: string; className?: string }) {
   return (
-    <span className="flex items-center gap-2.5 rounded-2xl border px-3 py-2 backdrop-blur-md"
-      style={{ background: 'color-mix(in srgb, var(--card) 88%, transparent)', borderColor: `color-mix(in srgb, ${f.color} 38%, transparent)`, boxShadow: `0 10px 30px -14px ${f.color}` }}
+    <div className={`foc-pill sc-card sc-card-link group relative flex flex-col overflow-hidden rounded-2xl border ${className}`}
+      style={{ '--acc': f.color, background: 'var(--card)' } as CSSProperties}
     >
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl" style={{ background: `${f.color}1e`, boxShadow: `0 0 0 1px ${f.color}33` }}>
-        {f.logo ? (
-          <svg viewBox={TECH[f.logo].viewBox} className="h-4 w-4" style={{ fill: f.color }}><path d={TECH[f.logo].path} /></svg>
-        ) : (
-          <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke={f.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{ICONS[f.icon!]}</svg>
+      <div className="relative flex h-20 items-center justify-center overflow-hidden"
+        style={{ background: `radial-gradient(120% 110% at 50% 0%, ${tint(f.color, 20)}, transparent 75%)` }}
+      >
+        <div className="lineart-dots absolute inset-0 opacity-50" aria-hidden />
+        <span className="relative flex h-11 w-11 items-center justify-center rounded-xl transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6"
+          style={{ background: tint(f.color, 16), boxShadow: `inset 0 0 0 1px ${tint(f.color, 35)}, 0 10px 24px -12px ${f.color}` }}
+        >
+          {f.logo ? (
+            <svg viewBox={TECH[f.logo].viewBox} className="h-5 w-5" style={{ fill: f.color }}><path d={TECH[f.logo].path} /></svg>
+          ) : (
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke={f.color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">{ICONS[f.icon!]}</svg>
+          )}
+        </span>
+        <span className="absolute top-2.5 end-3 font-mono text-[10px] font-bold tabular-nums" style={{ color: tint(f.color, 85) }}>
+          <bdi dir="ltr">{String(index + 1).padStart(2, '0')}</bdi>
+        </span>
+      </div>
+      <div className="flex flex-1 flex-col items-center gap-1 px-3 pb-4 pt-2.5 text-center" dir="ltr">
+        <span className="text-[13px] sm:text-sm font-black leading-tight" style={{ color: 'var(--text)' }}>{f.label}</span>
+        <span className="font-mono text-[9px] font-bold uppercase tracking-wider" style={{ color: `color-mix(in srgb, ${f.color} 70%, var(--text))` }}>{f.sub}</span>
+        {levelLabel && (
+          <span className="mt-1 rounded-full px-2 py-0.5 text-[9px] font-bold" dir="auto"
+            style={{ color: '#f59e0b', background: tint('#f59e0b', 14), boxShadow: `inset 0 0 0 1px ${tint('#f59e0b', 30)}` }}>
+            {levelLabel}
+          </span>
         )}
-      </span>
-      <span className="min-w-0 text-start" dir="ltr">
-        <span className="block text-[13px] font-bold leading-tight" style={{ color: 'var(--text)' }}>{f.label}</span>
-        <span className="block text-[9px] font-bold uppercase tracking-wider" style={{ color: 'var(--text-muted)' }}>{f.sub}</span>
-      </span>
-    </span>
+      </div>
+    </div>
   )
 }
 
@@ -92,6 +109,7 @@ function TehranClock({ locale }: { locale: string }) {
 export default function AboutSection() {
   const t = useTranslations('about')
   const th = useTranslations('hero')
+  const ts = useTranslations('skills')
   const locale = useLocale()
   const isRTL = useIsRTL()
   const ref = useRef<HTMLElement>(null)
@@ -106,8 +124,8 @@ export default function AboutSection() {
         y: 0, opacity: 1, duration: 0.5, ease: 'power2.out',
         scrollTrigger: { trigger: ref.current, start: 'top 90%', once: true },
       })
-      gsap.fromTo('.foc-pill', { scale: 0.6, opacity: 0 }, {
-        scale: 1, opacity: 1, duration: 0.5, stagger: 0.07, ease: 'back.out(1.7)',
+      gsap.fromTo('.foc-pill', { y: 24, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.5, stagger: 0.06, ease: 'power3.out', clearProps: 'transform',
         scrollTrigger: { trigger: '.bio-card', start: 'top 86%', once: true },
       })
       gsap.fromTo('.bento', { y: 26, opacity: 0 }, {
@@ -123,69 +141,63 @@ export default function AboutSection() {
       <div className="section-container">
         <SectionHeader title={t('title')} subtitle={t('subtitle')} />
 
-        {/* bio — statement card */}
-        <div className="bio-card relative overflow-hidden rounded-3xl border p-6 sm:p-8 mb-3 sm:mb-4" style={cardStyle}>
-          <div className="lineart-grid absolute inset-0 opacity-50 pointer-events-none" aria-hidden />
-          <span aria-hidden className="pointer-events-none absolute top-2 select-none font-black leading-none text-[80px] sm:text-[110px] opacity-90"
-            style={{ color: 'color-mix(in srgb, var(--violet) 22%, transparent)', fontFamily: 'Georgia, serif', insetInlineStart: '1.5rem' }}
-          >
-            {isRTL ? '”' : '“'}
-          </span>
-          <p className="relative text-base sm:text-lg font-semibold leading-8 max-w-3xl" style={{ color: 'var(--text)', textWrap: 'balance', paddingTop: '1.5rem' }}>
-            {t('bio')}
-          </p>
-
-          {/* ── core focus — newhedge-style capability map ── */}
-          <div className="relative mt-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] mb-4" style={{ color: 'var(--text-muted)' }}>
-              {t('core_focus')}
-            </p>
-
-            {/* desktop: scattered pills around a central mark */}
-            <div className="relative mx-auto hidden h-[360px] w-full max-w-[760px] lg:block">
-              {/* dashed connectors + orbit glow */}
-              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden>
-                <ellipse cx="50" cy="50" rx="44" ry="40" fill="none" stroke="var(--border)" strokeWidth="0.3" strokeDasharray="1.5 2" />
-                {['18,20', '6,38', '4,72', '24,92', '82,32', '92,66', '74,92'].map((p, i) => (
-                  <line key={i} x1="50" y1="50" x2={p.split(',')[0]} y2={p.split(',')[1]}
-                    stroke="var(--border)" strokeWidth="0.25" strokeDasharray="1 2" strokeOpacity="0.8" />
-                ))}
-              </svg>
-              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-20 blur-3xl pointer-events-none"
-                style={{ background: 'radial-gradient(circle, var(--cta), transparent 70%)' }} aria-hidden />
-
-              {/* central mark */}
-              <div className="absolute left-1/2 top-1/2 z-[2] w-[260px] -translate-x-1/2 -translate-y-1/2">
-                <div className="flex flex-col items-center gap-2 rounded-3xl border p-6 text-center"
-                  style={{ ...cardStyle, borderColor: 'var(--border-strong)' }}
-                >
-                  <Image src="/MY-Signture.png" alt="Sadatpour" width={180} height={44}
-                    className="h-11 w-auto object-contain" style={{ filter: 'brightness(0) invert(1)' }} />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em]" style={{ color: 'var(--text-muted)' }}>
-                    {t('focus_value')}
-                  </span>
-                </div>
-              </div>
-
-              {/* pills */}
-              {FOCUS.map(f => (
-                <div key={f.label} className={`foc-pill absolute z-[3] ${f.pos}`}>
-                  <FocusPill f={f} />
-                </div>
-              ))}
+        {/* bio — statement card + core focus */}
+        <div className="bio-card sc-card relative mb-3 sm:mb-4 overflow-hidden rounded-[24px] border"
+          style={{ '--acc': 'var(--brand)', background: 'var(--card)' } as CSSProperties}
+        >
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_340px]">
+            {/* statement */}
+            <div className="relative p-6 sm:p-8 lg:p-10">
+              <div className="lineart-dots absolute inset-0 opacity-30 pointer-events-none" aria-hidden />
+              <span className="relative inline-flex items-center gap-2 rounded-full px-3 py-1.5"
+                style={{ background: tint('var(--brand)', 12), boxShadow: `inset 0 0 0 1px ${tint('var(--brand)', 30)}`, color: 'var(--brand)' }}
+              >
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5 rtl:-scale-x-100" fill="currentColor" aria-hidden>
+                  <path d="M4 11.5C4 7.9 6.2 5.3 9.6 4.5l.7 1.7C8.4 7 7.4 8.4 7.3 10H10v8H4v-6.5zm10 0c0-3.6 2.2-6.2 5.6-7l.7 1.7c-1.9.8-2.9 2.2-3 3.8H20v8h-6v-6.5z" />
+                </svg>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em]">{th('name')}</span>
+              </span>
+              <p className="relative mt-5 max-w-3xl text-lg sm:text-xl lg:text-2xl font-bold leading-relaxed sm:leading-relaxed"
+                style={{ color: 'var(--text)', textWrap: 'pretty' }}
+              >
+                {t('bio')}
+              </p>
             </div>
 
-            {/* mobile/tablet: clean grid */}
-            <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-2 lg:hidden">
-              {FOCUS.map(f => (
-                <div key={f.label} className="foc-pill"><FocusPill f={f} /></div>
-              ))}
+            {/* signature panel */}
+            <div className="relative flex min-h-[200px] flex-col items-center justify-center gap-3 overflow-hidden border-t p-8 text-center lg:border-t-0 lg:border-s"
+              style={{ borderColor: 'var(--border)', background: `radial-gradient(110% 90% at 50% 0%, ${tint('var(--brand)', 22)}, transparent 75%)` }}
+            >
+              <div className="lineart-grid absolute inset-0 opacity-50 pointer-events-none" aria-hidden />
+              <svg className="pointer-events-none absolute inset-0 m-auto h-60 w-60 opacity-60" viewBox="0 0 100 100" fill="none" aria-hidden>
+                <circle cx="50" cy="50" r="46" stroke="var(--brand)" strokeWidth="0.4" strokeOpacity="0.35" strokeDasharray="1.5 2.5" />
+                <circle cx="50" cy="50" r="34" stroke="var(--brand)" strokeWidth="0.4" strokeOpacity="0.3" />
+                <circle cx="96" cy="50" r="1.6" fill="var(--brand)" className="sc-pulse" />
+                <circle cx="16" cy="50" r="1.2" fill="var(--brand)" fillOpacity="0.6" />
+              </svg>
+              <Image src="/MY-Signture.png" alt="Sadatpour" width={200} height={48} className="signature-ink relative h-12 w-auto object-contain" />
+              <span className="relative max-w-[16rem] text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: 'var(--text-secondary)' }}>
+                {t('focus_value')}
+              </span>
             </div>
           </div>
 
-          <div className="absolute -top-16 -end-16 h-52 w-52 rounded-full opacity-[0.12] pointer-events-none blur-2xl"
-            style={{ background: 'radial-gradient(circle, var(--violet), transparent)' }}
-          />
+          {/* core focus */}
+          <div className="relative border-t p-6 sm:p-8" style={{ borderColor: 'var(--border)' }}>
+            <div className="mb-5 flex items-center gap-4">
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em]" style={{ color: 'var(--text-muted)' }}>
+                {t('core_focus')}
+              </p>
+              <span className="h-px flex-1" style={{ background: 'var(--border)' }} />
+            </div>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-7">
+              {FOCUS.map((f, i) => (
+                // an odd last card spans the full row in the 2-column mobile grid
+                <FocusCard key={f.label} f={f} index={i} levelLabel={f.level ? ts(f.level) : undefined}
+                  className={i === FOCUS.length - 1 && FOCUS.length % 2 ? 'col-span-2 sm:col-span-1' : ''} />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* info cards */}

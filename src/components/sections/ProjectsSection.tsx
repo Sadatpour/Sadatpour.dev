@@ -1,189 +1,20 @@
 'use client'
 
-import { useEffect, useRef, type ReactNode } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocale, useTranslations, useIsRTL } from '@/i18n/I18nProvider'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { projects, type Project } from '@/lib/projects'
 import { FILTER_META, getCategoryLabels, getTechIcon } from '@/lib/projectMeta'
 import SectionHeader from '@/components/ui/SectionHeader'
-import aiProjects from '@/data/ai-projects.json'
+import WordPressShowcase, { WP_PROJECTS } from '@/components/sections/showcase/WordPressShowcase'
+import AiShowcase from '@/components/sections/showcase/AiShowcase'
 
 gsap.registerPlugin(ScrollTrigger)
 
-interface AiProject {
-  title: Record<string, string>
-  desc: Record<string, string>
-  url: string
-  tags: string[]
-  icon: string
-  featured?: boolean
-}
-
-const AI_PROJECTS = aiProjects as AiProject[]
-const AI_GOLD = '#7c5cff'
-const AI_AMBER = '#2f6bff'
-
-const AI_ICON_SVGS: Record<string, ReactNode> = {
-  brain: (
-    <>
-      <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
-      <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.12" />
-      <circle cx="50" cy="50" r="18" fill="none" stroke="currentColor" strokeWidth="0.5" opacity="0.1" />
-      <path d="M50 18c-8 0-14 4-18 10-3 5-5 12-5 22s2 17 5 22c4 6 10 10 18 10" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.2" />
-      <path d="M50 18c8 0 14 4 18 10 3 5 5 12 5 22s-2 17-5 22c-4 6-10 10-18 10" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.1" />
-      <circle cx="32" cy="35" r="4" fill="currentColor" opacity="0.3" />
-      <circle cx="50" cy="28" r="3" fill="currentColor" opacity="0.25" />
-      <circle cx="68" cy="35" r="4" fill="currentColor" opacity="0.2" />
-      <circle cx="50" cy="68" r="4" fill="currentColor" opacity="0.3" />
-      <path d="M32 35l18-7 18 7M32 35l6 25M50 28v40M68 35l-6 25" stroke="currentColor" strokeWidth="0.6" opacity="0.15" />
-    </>
-  ),
-  game: (
-    <>
-      <rect x="18" y="32" width="64" height="36" rx="6" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
-      <path d="M28 50h4v12h-4zM36 56h4v6h-4zM52 44h4v18h-4z" fill="currentColor" opacity="0.3" />
-      <circle cx="64" cy="50" r="4" fill="currentColor" opacity="0.35" />
-      <path d="M18 46l-4-4v16l4-4M82 46l4-4v16l-4-4" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.12" />
-    </>
-  ),
-  checklist: (
-    <>
-      <rect x="28" y="20" width="44" height="60" rx="4" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
-      <path d="M38 40l6 6 10-12" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M38 55h16M38 62h24" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.2" strokeLinecap="round" />
-      <rect x="44" y="28" width="12" height="3" rx="1.5" fill="currentColor" opacity="0.12" />
-    </>
-  ),
-  compass: (
-    <>
-      <circle cx="50" cy="50" r="38" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.18" />
-      <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" strokeWidth="0.6" opacity="0.12" />
-      <path d="M50 8v8M50 84v8M8 50h8M84 50h8" stroke="currentColor" strokeWidth="1" opacity="0.2" strokeLinecap="round" />
-      <path d="M64 36L54 54l-18 10 10-18z" fill="currentColor" opacity="0.28" />
-      <circle cx="50" cy="50" r="3.5" fill="currentColor" opacity="0.45" />
-    </>
-  ),
-  rocket: (
-    <>
-      <path d="M50 14c10 8 14 20 14 32 0 6-1 12-3 17H39c-2-5-3-11-3-17 0-12 4-24 14-32z" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.22" />
-      <circle cx="50" cy="40" r="6" fill="none" stroke="currentColor" strokeWidth="1.2" opacity="0.3" />
-      <circle cx="50" cy="40" r="2.5" fill="currentColor" opacity="0.3" />
-      <path d="M36 52c-6 4-9 10-10 18 6-1 12-3 16-7M64 52c6 4 9 10 10 18-6-1-12-3-16-7" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.18" />
-      <path d="M46 68c0 6 1 10 4 14 3-4 4-8 4-14" fill="none" stroke="currentColor" strokeWidth="1" opacity="0.25" />
-    </>
-  ),
-}
-
-function AiBadge({ label }: { label: string }) {
-  return (
-    <span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1"
-      style={{ background: 'rgba(124,92,255,0.12)', boxShadow: '0 0 0 1px rgba(124,92,255,0.25)' }}
-    >
-      <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke={AI_AMBER} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" />
-      </svg>
-      <span className="text-[9px] font-bold uppercase tracking-[0.2em]" style={{ color: AI_AMBER }}>
-        {label}
-      </span>
-    </span>
-  )
-}
-
-function AiProjectCard({ proj, locale, visitLabel, big }: {
-  proj: AiProject
-  locale: string
-  visitLabel: string
-  big?: boolean
-}) {
-  const title = proj.title[locale] ?? proj.title.en
-  const desc = proj.desc[locale] ?? proj.desc.en
-  const icon = AI_ICON_SVGS[proj.icon] || AI_ICON_SVGS.brain
-
-  return (
-    <a
-      href={proj.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`ai-card group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
-        big
-          ? 'rounded-[28px] border-2 p-6 sm:p-8 lg:col-span-3 min-h-[220px] sm:min-h-[260px]'
-          : 'rounded-2xl border p-5 sm:p-6 lg:col-span-2'
-      }`}
-      style={{
-        background: big
-          ? `linear-gradient(150deg, color-mix(in srgb, ${AI_GOLD} 7%, var(--card)), var(--card) 55%)`
-          : 'var(--card)',
-        borderColor: big ? 'rgba(124,92,255,0.35)' : 'var(--border)',
-        boxShadow: big ? '0 12px 48px -18px rgba(124,92,255,0.25)' : undefined,
-      }}
-    >
-      {/* line-art texture */}
-      <div className={`${big ? 'lineart-grid' : 'lineart-dots'} absolute inset-0 opacity-50 pointer-events-none`} aria-hidden />
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-        style={{ background: `radial-gradient(600px circle at 50% 0%, rgba(124,92,255,${big ? 0.18 : 0.1}), transparent 70%)` }}
-      />
-      <div className={`absolute -top-8 ${big ? '-right-6 w-52 h-52' : '-right-8 w-36 h-36'} opacity-[0.07] transition-all duration-700 group-hover:opacity-[0.14] group-hover:scale-110 group-hover:rotate-6`}>
-        <svg viewBox="0 0 100 100" className="w-full h-full" fill="none" style={{ color: AI_GOLD }}>
-          {icon}
-        </svg>
-      </div>
-      {/* corner sparkline (big cards) */}
-      {big && (
-        <svg className="absolute bottom-0 left-0 right-0 h-16 w-full opacity-40 pointer-events-none" viewBox="0 0 300 60" preserveAspectRatio="none" aria-hidden>
-          <defs>
-            <linearGradient id={`spk-${proj.icon}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={AI_GOLD} stopOpacity="0.35" />
-              <stop offset="100%" stopColor={AI_GOLD} stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path d="M0 45 C 30 20, 55 50, 85 32 S 140 8, 170 30 S 230 52, 265 22 S 295 30, 300 26 L300 60 L0 60 Z" fill={`url(#spk-${proj.icon})`} />
-          <path d="M0 45 C 30 20, 55 50, 85 32 S 140 8, 170 30 S 230 52, 265 22 S 295 30, 300 26" fill="none" stroke={AI_GOLD} strokeWidth="1.5" strokeOpacity="0.7" />
-        </svg>
-      )}
-
-      <div className="relative z-[1] flex items-center gap-2 mb-4">
-        <AiBadge label="AI" />
-        <div className="ml-auto flex gap-1">
-          {proj.tags.slice(0, big ? 3 : 2).map(tag => (
-            <span key={tag} className="text-[8px] px-1.5 py-0.5 rounded font-medium"
-              style={{ background: 'rgba(124,92,255,0.08)', color: 'rgba(124,92,255,0.7)' }}>
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <h3 className={`relative z-[1] font-black mb-2 leading-tight ${big ? 'text-2xl sm:text-3xl' : 'text-base sm:text-lg'}`}
-        style={{ color: 'var(--text)' }}
-      >
-        {title}
-      </h3>
-      <p className={`relative z-[1] leading-relaxed ${big ? 'text-sm sm:text-base max-w-md' : 'text-xs sm:text-sm'}`}
-        style={{ color: 'var(--text-secondary)' }}
-      >
-        {desc}
-      </p>
-
-      <div className="relative z-[1] mt-auto pt-4 flex items-center justify-between">
-        <span className={`font-bold flex items-center gap-1.5 transition-all duration-300 group-hover:gap-2.5 ${big ? 'text-xs' : 'text-[10px]'}`}
-          style={{ color: AI_AMBER }}
-        >
-          {visitLabel}
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17L17 7M7 7h10v10" />
-          </svg>
-        </span>
-        {big && (
-          <span className="h-1.5 w-16 rounded-full overflow-hidden" style={{ background: 'rgba(124,92,255,0.12)' }}>
-            <span className="block h-full w-1/3 rounded-full transition-all duration-700 group-hover:w-full"
-              style={{ background: `linear-gradient(90deg, ${AI_GOLD}, ${AI_AMBER})` }} />
-          </span>
-        )}
-      </div>
-    </a>
-  )
-}
+// Projects shown in the WordPress or AI blocks are left out of the "more projects" list.
+const HIGHLIGHTED_SLUGS = new Set([...WP_PROJECTS.map(p => p.slug), 'otaghak-blog', 'sadatpour'])
+const OTHER_PROJECTS = projects.filter(p => !HIGHLIGHTED_SLUGS.has(p.slug))
 
 function ClientProjectCard({ project, label, isRTL }: { project: Project; label: string; isRTL: boolean }) {
   const pm = FILTER_META[project.category] || FILTER_META.all
@@ -195,7 +26,7 @@ function ClientProjectCard({ project, label, isRTL }: { project: Project; label:
       target="_blank"
       rel="noopener noreferrer"
       dir={isRTL ? 'rtl' : 'ltr'}
-      className="group flex w-80 shrink-0 items-center gap-3 rounded-xl border p-4 transition-all duration-300 hover:border-[var(--border-strong)] sm:w-96"
+      className="group flex w-full max-w-sm items-center gap-3 rounded-xl border p-4 transition-all duration-300 hover:border-[var(--border-strong)] sm:w-96"
       style={{ background: 'var(--card)', borderColor: 'var(--border)' }}
     >
       <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg"
@@ -233,26 +64,17 @@ export default function ProjectsSection() {
   const ref = useRef<HTMLElement>(null)
   const labels = getCategoryLabels(locale)
 
-  const featured = AI_PROJECTS.filter(p => p.featured)
-  const rest = AI_PROJECTS.filter(p => !p.featured)
-
-  // 4 rows, alternating direction, at half the previous scroll speed
-  const ROWS = [
-    { items: projects.filter((_, i) => i % 4 === 0), anim: 'marquee-left', dur: 120 },
-    { items: projects.filter((_, i) => i % 4 === 1), anim: 'marquee-right', dur: 130 },
-    { items: projects.filter((_, i) => i % 4 === 2), anim: 'marquee-left', dur: 125 },
-    { items: projects.filter((_, i) => i % 4 === 3), anim: 'marquee-right', dur: 135 },
-  ]
-
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo('.sh-head', { y: 30, opacity: 0 }, {
         y: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
         scrollTrigger: { trigger: ref.current, start: 'top 76%' },
       })
-      gsap.fromTo('.ai-card', { y: 40, opacity: 0, scale: 0.96 }, {
-        y: 0, opacity: 1, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)',
-        scrollTrigger: { trigger: ref.current, start: 'top 70%' },
+      gsap.utils.toArray<HTMLElement>('.sc-block').forEach(block => {
+        gsap.fromTo(block.querySelectorAll('.sc-card'), { y: 40, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.55, stagger: 0.05, ease: 'power3.out', clearProps: 'transform',
+          scrollTrigger: { trigger: block, start: 'top 78%' },
+        })
       })
     }, ref)
     return () => ctx.revert()
@@ -263,59 +85,26 @@ export default function ProjectsSection() {
       <div className="section-container">
         <SectionHeader title={t('title')} subtitle={t('subtitle')} />
 
-        {/* ── AI showcase ─────────────────────────────────────── */}
-        <div className="relative mb-14 sm:mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-8 w-1 rounded-full" style={{ background: `linear-gradient(180deg, ${AI_GOLD}, ${AI_AMBER})` }} />
-            <div>
-              <span className="text-sm sm:text-base font-black uppercase tracking-[0.2em]" style={{ color: AI_AMBER }}>
-                {t('ai_vibe')}
-              </span>
-              <p className="text-[11px] sm:text-xs font-medium mt-0.5" style={{ color: 'var(--text-muted)' }}>
-                {t('ai_intro')}
+        <WordPressShowcase />
+        <AiShowcase />
+
+        {OTHER_PROJECTS.length > 0 && (
+          <>
+            <div className="mt-20 sm:mt-24 mb-6 sm:mb-8 text-center">
+              <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: 'var(--text)' }}>
+                {t('client_projects')}
+              </h3>
+              <p className="mt-2 text-sm sm:text-base" style={{ color: 'var(--text-muted)' }}>
+                {t('client_intro')}
               </p>
             </div>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5">
-            {featured.map(proj => (
-              <AiProjectCard key={proj.url} proj={proj} locale={locale} visitLabel={t('visit')} big />
-            ))}
-            {rest.map(proj => (
-              <AiProjectCard key={proj.url} proj={proj} locale={locale} visitLabel={t('visit')} />
-            ))}
-          </div>
-        </div>
-
-        {/* ── Client projects: 4 horizontal auto-scroll rows ──── */}
-        <div className="mt-20 sm:mt-28 mb-8 sm:mb-10 text-center">
-          <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: 'var(--text)' }}>
-            {t('client_projects')}
-          </h3>
-          <p className="mt-2 text-sm sm:text-base" style={{ color: 'var(--text-muted)' }}>
-            {t('client_intro')}
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-3 sm:gap-4" dir="ltr">
-          {ROWS.map((row, ri) => (
-            <div key={ri} className="marquee">
-              <div
-                className="marquee-track flex w-max items-stretch gap-3"
-                style={{ animation: `${row.anim} ${row.dur}s linear infinite` }}
-              >
-                {[...row.items, ...row.items].map((project, i) => (
-                  <ClientProjectCard
-                    key={`${project.slug}-${i}`}
-                    project={project}
-                    label={labels[project.category]}
-                    isRTL={isRTL}
-                  />
-                ))}
-              </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              {OTHER_PROJECTS.map(project => (
+                <ClientProjectCard key={project.slug} project={project} label={labels[project.category]} isRTL={isRTL} />
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
     </section>
   )

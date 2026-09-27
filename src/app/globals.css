@@ -219,33 +219,6 @@ html[dir="ltr"] body {
   100% { transform: translateX(200%); }
 }
 
-/* ── Client-projects auto-scroll marquee (2 horizontal rows) ── */
-.marquee {
-  overflow: hidden;
-  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
-}
-
-.marquee:hover .marquee-track,
-.marquee:focus-within .marquee-track {
-  animation-play-state: paused !important;
-}
-
-@keyframes marquee-left {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-50% - 0.375rem)); }
-}
-
-@keyframes marquee-right {
-  from { transform: translateX(calc(-50% - 0.375rem)); }
-  to { transform: translateX(0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track { animation: none !important; }
-  .marquee { overflow-x: auto; }
-}
-
 /* ── Terminal cursor ── */
 @keyframes cursor-blink {
   0%, 45% { opacity: 1; }
@@ -392,4 +365,114 @@ html[dir="ltr"] body {
 
 @media (prefers-reduced-motion: reduce) {
   .constellation-line, .constellation-node { animation: none; }
+}
+
+/* ── Project showcase cards (WordPress + AI) ── */
+.sc-card {
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+.sc-card-link:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--acc) 55%, transparent);
+  box-shadow: 0 18px 50px -20px color-mix(in srgb, var(--acc) 55%, transparent);
+}
+.sc-card-link:focus-visible {
+  outline: 2px solid var(--acc);
+  outline-offset: 3px;
+}
+
+.sc-card .sc-draw[pathLength] {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+.sc-card:hover .sc-draw[pathLength] {
+  animation: sc-draw 1.1s ease-out;
+}
+.sc-card:hover .sc-draw[stroke-dasharray]:not([pathLength]) {
+  animation: sc-march 1.2s linear infinite;
+}
+@keyframes sc-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+@keyframes sc-march {
+  to { stroke-dashoffset: -26; }
+}
+
+.sc-card .sc-needle {
+  transform: rotate(-70deg);
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.sc-card:hover .sc-needle {
+  transform: rotate(8deg);
+}
+
+.sc-card .sc-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: sc-pulse 2.4s ease-in-out infinite;
+}
+@keyframes sc-pulse {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.sc-card .sc-float {
+  transform-box: fill-box;
+  animation: sc-float 3.2s ease-in-out infinite;
+}
+@keyframes sc-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sc-card, .sc-card * { animation: none !important; transition: none !important; }
+  .sc-card .sc-needle { transform: rotate(0deg); }
+}
+
+/* Signature image: white ink on dark, black ink on light */
+.signature-ink { filter: brightness(0) invert(1); }
+[data-theme="light"] .signature-ink { filter: brightness(0); }
+
+/* ── Glass surfaces (scrolled header, dropdowns, hero signature) ── */
+.glass-header,
+.glass-bar,
+.glass-panel {
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  backdrop-filter: blur(22px) saturate(180%);
+}
+/* full-width header while scrolled: frosted strip over the page content */
+.glass-header {
+  background: color-mix(in srgb, var(--bg) 62%, transparent);
+  border-bottom-color: color-mix(in srgb, var(--text) 12%, transparent);
+  box-shadow: 0 10px 34px -16px rgba(0, 0, 0, 0.6), inset 0 -1px 0 rgba(255, 255, 255, 0.04);
+}
+.glass-bar,
+.glass-panel {
+  border-color: color-mix(in srgb, var(--text) 14%, transparent);
+}
+.glass-bar {
+  background: color-mix(in srgb, var(--card) 58%, transparent);
+  box-shadow: 0 12px 40px -14px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+.glass-panel {
+  background: color-mix(in srgb, var(--card) 78%, transparent);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+[data-theme="light"] .glass-header {
+  background: rgba(245, 246, 251, 0.62);
+  box-shadow: 0 10px 34px -20px rgba(30, 34, 80, 0.3), inset 0 -1px 0 rgba(255, 255, 255, 0.8);
+}
+[data-theme="light"] .glass-bar {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 12px 40px -18px rgba(30, 34, 80, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+[data-theme="light"] .glass-panel {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-header, .glass-bar, .glass-panel { background: color-mix(in srgb, var(--card) 96%, transparent); }
 }

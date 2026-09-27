@@ -54,7 +54,8 @@
     "toolbelt": "工具箱",
     "expert": "专家",
     "advanced": "进阶",
-    "proficient": "熟练"
+    "proficient": "熟练",
+    "familiar": "了解"
   },
   "projects": {
     "title": "项目",
@@ -62,19 +63,21 @@
     "view": "查看项目",
     "live": "在线演示",
     "github": "源代码",
+    "wp_intro": "我使用 WordPress 与 WooCommerce 开发的平台和商店",
+    "wp_more": "更多 WordPress 项目",
     "ai_vibe": "AI 风格",
     "featured": "精选",
     "show_more": "显示更多",
     "visit": "访问网站",
     "ai_intro": "借助 AI 设计与构建的产品",
-    "client_projects": "客户项目",
+    "client_projects": "更多项目",
     "client_intro": "我设计或维护的网站精选"
   },
   "experience": {
     "title": "部分工作经历",
     "subtitle": "我的职业历程",
     "nerkhito": {
-      "role": "联合创始人 & 首席开发",
+      "role": "WordPress 开发者",
       "summary": "负责定价平台的产品工程、架构和前端性能优化。",
       "period": "2025年1月 - 至今"
     },

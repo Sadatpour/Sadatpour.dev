@@ -27,38 +27,38 @@ const SEO: Record<string, Seo> = {
   fa: {
     title: 'مجتبا سادات‌پور | توسعه‌دهنده فرانت‌اند و مشاور فنی وب',
     description:
-      'نمونه‌کار مجتبا سادات‌پور — توسعه‌دهنده فرانت‌اند و معمار راهکارهای وب، متخصص React، Next.js، وردپرس و کدنویسی با هوش مصنوعی. تهران، ایران — آماده همکاری دورکاری.',
-    keywords: ['مجتبا سادات‌پور', 'توسعه‌دهنده فرانت‌اند', 'برنامه‌نویس وب', 'طراحی سایت', 'ری‌اکت', 'نکست جی‌اس', 'وردپرس', 'طراحی سایت با هوش مصنوعی', 'فریلنسر وب', 'برنامه‌نویس تهران', 'مشاور فنی وب'],
+      'نمونه‌کار مجتبا سادات‌پور — توسعه‌دهنده فرانت‌اند و معمار راهکارهای وب، متخصص وردپرس، جاوااسکریپت و کدنویسی با هوش مصنوعی. تهران، ایران — آماده همکاری دورکاری.',
+    keywords: ['مجتبا سادات‌پور', 'توسعه‌دهنده فرانت‌اند', 'برنامه‌نویس وب', 'طراحی سایت', 'توسعه‌دهنده وردپرس', 'وردپرس', 'طراحی سایت با هوش مصنوعی', 'فریلنسر وب', 'برنامه‌نویس تهران', 'مشاور فنی وب'],
   },
   en: {
     title: 'Mojtaba Sadatpour | Front-End Developer & Web Consultant',
     description:
-      'Portfolio of Mojtaba Sadatpour — front-end developer and web solutions architect specializing in React, Next.js, WordPress and AI-powered development. Tehran, Iran — open for remote work.',
-    keywords: ['Mojtaba Sadatpour', 'front-end developer', 'React developer', 'Next.js developer', 'WordPress developer', 'AI web development', 'web solutions architect', 'freelance developer', 'Tehran developer', 'TypeScript'],
+      'Portfolio of Mojtaba Sadatpour — front-end developer and web solutions architect specializing in WordPress, JavaScript and AI-powered development. Tehran, Iran — open for remote work.',
+    keywords: ['Mojtaba Sadatpour', 'front-end developer', 'WordPress developer', 'WooCommerce developer', 'AI web development', 'web solutions architect', 'freelance developer', 'Tehran developer'],
   },
   de: {
     title: 'Mojtaba Sadatpour | Frontend-Entwickler & Web-Berater',
     description:
-      'Portfolio von Mojtaba Sadatpour — Frontend-Entwickler und Web-Architekt, spezialisiert auf React, Next.js, WordPress und KI-gestützte Entwicklung. Offen für Remote-Arbeit.',
-    keywords: ['Mojtaba Sadatpour', 'Frontend-Entwickler', 'React Entwickler', 'WordPress Entwickler', 'Webentwicklung', 'KI Webentwicklung', 'Freelancer'],
+      'Portfolio von Mojtaba Sadatpour — Frontend-Entwickler und Web-Architekt, spezialisiert auf WordPress, JavaScript und KI-gestützte Entwicklung. Offen für Remote-Arbeit.',
+    keywords: ['Mojtaba Sadatpour', 'Frontend-Entwickler', 'WordPress Entwickler', 'WooCommerce Entwickler', 'Webentwicklung', 'KI Webentwicklung', 'Freelancer'],
   },
   tr: {
     title: 'Mojtaba Sadatpour | Front-End Geliştirici & Web Danışmanı',
     description:
-      'Mojtaba Sadatpour portföyü — React, Next.js, WordPress ve yapay zekâ destekli geliştirmede uzman front-end geliştirici. Uzaktan çalışmaya açık.',
-    keywords: ['Mojtaba Sadatpour', 'front-end geliştirici', 'React geliştirici', 'WordPress geliştirici', 'web geliştirme', 'yapay zeka web', 'serbest çalışan'],
+      'Mojtaba Sadatpour portföyü — WordPress, JavaScript ve yapay zekâ destekli geliştirmede uzman front-end geliştirici. Uzaktan çalışmaya açık.',
+    keywords: ['Mojtaba Sadatpour', 'front-end geliştirici', 'WordPress geliştirici', 'WooCommerce geliştirici', 'web geliştirme', 'yapay zeka web', 'serbest çalışan'],
   },
   ar: {
     title: 'مجتبى ساداتبور | مطوّر واجهات أمامية ومستشار ويب',
     description:
-      'أعمال مجتبى ساداتبور — مطوّر واجهات أمامية ومهندس حلول ويب متخصص في React وNext.js وووردبريس والتطوير بمساعدة الذكاء الاصطناعي. متاح للعمل عن بُعد.',
-    keywords: ['مجتبى ساداتبور', 'مطور واجهات أمامية', 'مطور رياكت', 'مطور ووردبريس', 'تطوير الويب', 'الذكاء الاصطناعي', 'مستقل'],
+      'أعمال مجتبى ساداتبور — مطوّر واجهات أمامية ومهندس حلول ويب متخصص في ووردبريس وJavaScript والتطوير بمساعدة الذكاء الاصطناعي. متاح للعمل عن بُعد.',
+    keywords: ['مجتبى ساداتبور', 'مطور واجهات أمامية', 'مطور ووردبريس', 'مطور ووكومرس', 'تطوير الويب', 'الذكاء الاصطناعي', 'مستقل'],
   },
   zh: {
     title: 'Mojtaba Sadatpour | 前端开发者与网站顾问',
     description:
-      'Mojtaba Sadatpour 作品集——专注于 React、Next.js、WordPress 和 AI 驱动开发的前端开发者与网站架构师。可远程合作。',
-    keywords: ['Mojtaba Sadatpour', '前端开发', 'React 开发', 'WordPress 开发', '网站开发', 'AI 网站开发', '自由职业'],
+      'Mojtaba Sadatpour 作品集——专注于 WordPress、JavaScript 和 AI 驱动开发的前端开发者与网站架构师。可远程合作。',
+    keywords: ['Mojtaba Sadatpour', '前端开发', 'WordPress 开发', 'WooCommerce 开发', '网站开发', 'AI 网站开发', '自由职业'],
   },
 }
 
@@ -114,7 +114,7 @@ function jsonLd(locale: string) {
     email: 'mailto:sadatpour.web@gmail.com',
     address: { '@type': 'PostalAddress', addressLocality: 'Tehran', addressCountry: 'IR' },
     knowsLanguage: ['fa', 'en', 'de'],
-    knowsAbout: ['React', 'Next.js', 'TypeScript', 'WordPress', 'Tailwind CSS', 'AI-assisted development', 'Web Performance', 'UI/UX Motion'],
+    knowsAbout: ['WordPress', 'WooCommerce', 'JavaScript', 'Elementor', 'Tailwind CSS', 'PHP', 'React', 'Next.js', 'AI-assisted development', 'Web Performance', 'UI/UX Motion'],
     sameAs: ['https://github.com/Sadatpour', 'https://linkedin.com/in/sadatpour'],
   }
 }
