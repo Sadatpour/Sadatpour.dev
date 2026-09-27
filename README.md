@@ -43,7 +43,7 @@
 ## 📁 Project Structure
 
 ```
-sadatpour-portfolio/
+Sadatpour.dev/
 │
 ├── public/
 │   └── logo.png                          # Site logo
