@@ -62,12 +62,14 @@
     "view": "Projekt ansehen",
     "live": "Live Demo",
     "github": "Quellcode",
+    "wp_title": "WordPress-Projekte",
+    "wp_intro": "Plattformen und Shops, die ich mit WordPress & WooCommerce entwickelt habe",
     "ai_vibe": "KI Vibe",
     "featured": "hervorgehoben",
     "show_more": "Mehr anzeigen",
     "visit": "Website besuchen",
     "ai_intro": "Mit KI entworfene und gebaute Produkte",
-    "client_projects": "Kundenprojekte",
+    "client_projects": "Weitere Projekte",
     "client_intro": "Eine Auswahl von Websites, die ich gestaltet oder betreut habe"
   },
   "experience": {

@@ -62,12 +62,14 @@
     "view": "查看项目",
     "live": "在线演示",
     "github": "源代码",
+    "wp_title": "WordPress 项目",
+    "wp_intro": "我使用 WordPress 与 WooCommerce 开发的平台和商店",
     "ai_vibe": "AI 风格",
     "featured": "精选",
     "show_more": "显示更多",
     "visit": "访问网站",
     "ai_intro": "借助 AI 设计与构建的产品",
-    "client_projects": "客户项目",
+    "client_projects": "更多项目",
     "client_intro": "我设计或维护的网站精选"
   },
   "experience": {

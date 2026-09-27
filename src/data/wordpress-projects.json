@@ -1,0 +1,127 @@
+[
+  {
+    "slug": "nerkhito",
+    "title": { "en": "Nerkhito", "fa": "نرخیتو" },
+    "url": "https://nerkhito.ir/",
+    "featured": true,
+    "kind": {
+      "fa": "پلتفرم داده‌های مالی",
+      "en": "Financial data platform",
+      "de": "Finanzdaten-Plattform",
+      "tr": "Finansal veri platformu",
+      "ar": "منصة بيانات مالية",
+      "zh": "金融数据平台"
+    },
+    "desc": {
+      "fa": "پلتفرم مالی داده‌محور بر پایه وردپرس، با دریافت خودکار داده از API، پردازش زمان‌بندی‌شده و کش برای بیش از ۴۰۰ دارایی مالی.",
+      "en": "Data-driven financial platform on WordPress with automated API ingestion, scheduled processing and caching for 400+ financial assets.",
+      "de": "Datengetriebene Finanzplattform auf WordPress mit automatisiertem API-Import, geplanter Verarbeitung und Caching für über 400 Finanzwerte.",
+      "tr": "400'den fazla finansal varlık için otomatik API veri alımı, zamanlanmış işleme ve önbellekleme sunan, WordPress tabanlı veri odaklı finans platformu.",
+      "ar": "منصة مالية قائمة على البيانات مبنية على ووردبريس، مع استيراد تلقائي عبر API ومعالجة مجدولة وتخزين مؤقت لأكثر من 400 أصل مالي.",
+      "zh": "基于 WordPress 的数据驱动金融平台，支持 API 自动采集、定时处理与缓存，管理 400 多项金融资产。"
+    },
+    "metric": {
+      "value": "−80%",
+      "label": {
+        "fa": "عملیات دستی داده",
+        "en": "manual data operations",
+        "de": "manuelle Datenpflege",
+        "tr": "manuel veri işlemleri",
+        "ar": "العمليات اليدوية للبيانات",
+        "zh": "人工数据操作"
+      }
+    },
+    "tags": ["WordPress", "PHP", "REST APIs", "Automation", "SEO", "Performance"]
+  },
+  {
+    "slug": "otaghak",
+    "title": { "en": "Otaghak Blog", "fa": "بلاگ اتاقک" },
+    "url": "https://www.otaghak.com/blog/",
+    "featured": true,
+    "kind": {
+      "fa": "پلتفرم سفر",
+      "en": "Travel platform",
+      "de": "Reiseplattform",
+      "tr": "Seyahat platformu",
+      "ar": "منصة سفر",
+      "zh": "旅行平台"
+    },
+    "desc": {
+      "fa": "بازطراحی کامل بلاگ اتاقک بر پایه اصول UI/UX، همراه با یک افزونه هسته‌ی ماژولار که داده‌های زنده سفر را از APIهای پلتفرم اصلی به مقاله‌ها می‌آورد.",
+      "en": "End-to-end UI/UX redesign of the Otaghak blog, with a modular core plugin that brings live travel data from the main platform's APIs into articles.",
+      "de": "Komplettes UI/UX-Redesign des Otaghak-Blogs mit einem modularen Core-Plugin, das Live-Reisedaten aus den APIs der Hauptplattform in Artikel einbindet.",
+      "tr": "Otaghak blogunun UI/UX odaklı baştan sona yeniden tasarımı; ana platformun API'lerinden canlı seyahat verilerini makalelere taşıyan modüler bir çekirdek eklentiyle.",
+      "ar": "إعادة تصميم شاملة لمدونة Otaghak وفق مبادئ UI/UX، مع إضافة أساسية معيارية تجلب بيانات السفر الحية من واجهات API للمنصة الرئيسية إلى المقالات.",
+      "zh": "基于 UI/UX 原则对 Otaghak 博客进行全面重新设计，并开发模块化核心插件，将主平台 API 的实时旅行数据引入文章。"
+    },
+    "tags": ["WordPress", "Theme Engineering", "Frontend", "Performance"]
+  },
+  {
+    "slug": "dalili-group",
+    "title": { "en": "Dalili Group", "fa": "گروه دلیلی" },
+    "url": "https://daliligroup.com/",
+    "featured": true,
+    "kind": {
+      "fa": "پلتفرم خودرویی",
+      "en": "Automotive platform",
+      "de": "Automobil-Plattform",
+      "tr": "Otomotiv platformu",
+      "ar": "منصة سيارات",
+      "zh": "汽车平台"
+    },
+    "desc": {
+      "fa": "رابط‌های سفارشی وردپرس، معماری محتوا و کامپوننت‌های قابل‌استفاده‌ی مجدد المنتور برای یک گروه خودرویی، همراه با بازطراحی صفحات واکنش‌گرا.",
+      "en": "Custom WordPress interfaces, content architecture and reusable Elementor components for an automotive group, with redesigned responsive pages.",
+      "de": "Individuelle WordPress-Oberflächen, Content-Architektur und wiederverwendbare Elementor-Komponenten für eine Automobilgruppe, mit neu gestalteten responsiven Seiten.",
+      "tr": "Bir otomotiv grubu için özel WordPress arayüzleri, içerik mimarisi ve yeniden kullanılabilir Elementor bileşenleri; yeniden tasarlanmış duyarlı sayfalarla.",
+      "ar": "واجهات ووردبريس مخصصة وبنية محتوى ومكوّنات Elementor قابلة لإعادة الاستخدام لمجموعة سيارات، مع إعادة تصميم صفحات متجاوبة.",
+      "zh": "为汽车集团打造定制 WordPress 界面、内容架构和可复用的 Elementor 组件，并重新设计响应式页面。"
+    },
+    "metric": {
+      "value": "−35%",
+      "label": {
+        "fa": "زمان بارگذاری صفحه",
+        "en": "page load time",
+        "de": "Ladezeit",
+        "tr": "sayfa yükleme süresi",
+        "ar": "زمن تحميل الصفحة",
+        "zh": "页面加载时间"
+      }
+    },
+    "tags": ["WordPress", "Content Architecture", "Elementor", "Dynamic Content"]
+  },
+  {
+    "slug": "ibamo",
+    "title": { "en": "Ibamo" },
+    "url": "https://ibamo.ir/",
+    "tags": ["WooCommerce", "Custom Development", "Optimization", "Maintenance"]
+  },
+  {
+    "slug": "simply-travel",
+    "title": { "en": "Simply Travel & Tour" },
+    "url": "https://simplytravelandtour.com/",
+    "tags": ["Travel", "Theme Engineering", "Frontend", "Performance"]
+  },
+  {
+    "slug": "cyra-beauty",
+    "title": { "en": "Cyra Beauty" },
+    "url": "https://cyrabeauty.ca/",
+    "tags": ["WooCommerce", "Elementor", "Optimization", "Maintenance"]
+  },
+  {
+    "slug": "unique-cut",
+    "title": { "en": "Unique Cut" },
+    "url": "https://uniquecut.ca/",
+    "tags": ["WordPress", "Elementor"]
+  },
+  {
+    "slug": "violet-build",
+    "title": { "en": "Violet Build" },
+    "tags": ["WordPress", "Theme Engineering", "Performance"]
+  },
+  {
+    "slug": "concepto-interiors",
+    "title": { "en": "Concepto Interiors" },
+    "tags": ["WordPress", "Theme Engineering", "Performance"]
+  }
+]

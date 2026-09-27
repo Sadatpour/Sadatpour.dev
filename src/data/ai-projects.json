@@ -1,6 +1,9 @@
 [
   {
-    "title": { "fa": "نوجَست", "en": "NoJast" },
+    "title": {
+      "fa": "نوجَست",
+      "en": "NoJast"
+    },
     "desc": {
       "fa": "خانه‌ی محصولات و استارتاپ‌های ایرانی؛ هر روز محصولات جدید را کشف کنید، رأی بدهید و گفتگو کنید.",
       "en": "The home of Iranian products & startups — discover new launches daily, vote, and discuss.",
@@ -10,27 +13,19 @@
       "zh": "伊朗产品与创业公司之家——每日发现新品、投票并参与讨论。"
     },
     "url": "https://nojast.ir/",
-    "tags": ["AI", "Community", "Startups"],
+    "tags": [
+      "AI",
+      "Community",
+      "Startups"
+    ],
     "icon": "rocket",
     "featured": true
   },
   {
-    "title": { "fa": "قطب‌نما", "en": "Qotbnama" },
-    "desc": {
-      "fa": "اندیشه‌ات را بهتر بشناس؛ پلتفرمی برای شناخت و تحلیل شیوه‌ی اندیشیدن.",
-      "en": "Know your thoughts better — a platform for exploring and analyzing how you think.",
-      "de": "Verstehe dein Denken besser — eine Plattform zur Analyse der eigenen Denkweise.",
-      "tr": "Düşüncelerini daha iyi tanı — düşünme biçimini keşfetme ve analiz platformu.",
-      "ar": "اعرف أفكارك بشكل أفضل — منصة لاستكشاف طريقة تفكيرك وتحليلها.",
-      "zh": "更好地认识你的思维——探索与分析思维方式的平台。"
+    "title": {
+      "fa": "دویچ لرنن",
+      "en": "Deutsch Lernen"
     },
-    "url": "https://qotbnama.vercel.app/",
-    "tags": ["AI", "Mindset", "Analysis"],
-    "icon": "compass",
-    "featured": true
-  },
-  {
-    "title": { "fa": "دویچ لرنن", "en": "Deutsch Lernen" },
     "desc": {
       "fa": "پلتفرم آموزش زبان آلمانی (اتریشی) با تمرین‌های تعاملی.",
       "en": "Austrian German learning platform with interactive practice.",
@@ -40,11 +35,61 @@
       "zh": "奥地利德语学习平台，提供互动练习。"
     },
     "url": "https://sadatpour.dev/deutsch/",
-    "tags": ["AI", "Education", "German"],
-    "icon": "brain"
+    "tags": [
+      "AI",
+      "Education",
+      "German"
+    ],
+    "icon": "brain",
+    "featured": true
   },
   {
-    "title": { "fa": "اپل چیس فرنزی", "en": "Apple Chase Frenzy" },
+    "title": {
+      "fa": "سادات‌پور دات دِو",
+      "en": "Sadatpour.dev"
+    },
+    "desc": {
+      "fa": "نمونه‌کار شخصی ساخته‌شده با کمک هوش مصنوعی؛ چندزبانه، واکنش‌گرا و بهینه برای سئو و سرعت.",
+      "en": "AI-assisted personal portfolio — multilingual, responsive, and tuned for SEO and performance.",
+      "de": "KI-gestütztes persönliches Portfolio — mehrsprachig, responsiv und auf SEO und Performance optimiert.",
+      "tr": "Yapay zekâ destekli kişisel portföy — çok dilli, duyarlı, SEO ve performans için optimize edilmiş.",
+      "ar": "معرض أعمال شخصي بمساعدة الذكاء الاصطناعي — متعدد اللغات ومتجاوب ومُحسَّن لمحركات البحث والأداء.",
+      "zh": "AI 辅助打造的个人作品集——多语言、响应式，并针对 SEO 与性能优化。"
+    },
+    "url": "https://sadatpour.dev/",
+    "tags": [
+      "AI",
+      "Portfolio",
+      "SEO"
+    ],
+    "icon": "code"
+  },
+  {
+    "title": {
+      "fa": "قطب‌نما",
+      "en": "Qotbnama"
+    },
+    "desc": {
+      "fa": "اندیشه‌ات را بهتر بشناس؛ پلتفرمی برای شناخت و تحلیل شیوه‌ی اندیشیدن.",
+      "en": "Know your thoughts better — a platform for exploring and analyzing how you think.",
+      "de": "Verstehe dein Denken besser — eine Plattform zur Analyse der eigenen Denkweise.",
+      "tr": "Düşüncelerini daha iyi tanı — düşünme biçimini keşfetme ve analiz platformu.",
+      "ar": "اعرف أفكارك بشكل أفضل — منصة لاستكشاف طريقة تفكيرك وتحليلها.",
+      "zh": "更好地认识你的思维——探索与分析思维方式的平台。"
+    },
+    "url": "https://qotbnama.vercel.app/",
+    "tags": [
+      "AI",
+      "Mindset",
+      "Analysis"
+    ],
+    "icon": "compass"
+  },
+  {
+    "title": {
+      "fa": "اپل چیس فرنزی",
+      "en": "Apple Chase Frenzy"
+    },
     "desc": {
       "fa": "بازی مرورگری ساخته‌شده با هوش مصنوعی بر پایه‌ی Canvas.",
       "en": "AI-generated browser game built on Canvas.",
@@ -54,11 +99,18 @@
       "zh": "基于 Canvas 的 AI 生成浏览器游戏。"
     },
     "url": "https://applechasefrenzygame.vercel.app/",
-    "tags": ["Game", "Canvas", "AI"],
+    "tags": [
+      "Game",
+      "Canvas",
+      "AI"
+    ],
     "icon": "game"
   },
   {
-    "title": { "fa": "تسک پلنر", "en": "Task Planner" },
+    "title": {
+      "fa": "تسک پلنر",
+      "en": "Task Planner"
+    },
     "desc": {
       "fa": "افزونه‌ی کروم برای برنامه‌ریزی روزانه و مدیریت کارها.",
       "en": "Chrome extension for daily planning and productivity.",
@@ -68,7 +120,11 @@
       "zh": "用于日常规划与效率管理的 Chrome 扩展。"
     },
     "url": "https://planner-chromeextension.vercel.app/",
-    "tags": ["Extension", "Productivity", "AI"],
+    "tags": [
+      "Extension",
+      "Productivity",
+      "AI"
+    ],
     "icon": "checklist"
   }
 ]

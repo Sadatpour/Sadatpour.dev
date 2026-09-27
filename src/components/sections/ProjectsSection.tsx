@@ -8,6 +8,7 @@ import { projects, type Project } from '@/lib/projects'
 import { FILTER_META, getCategoryLabels, getTechIcon } from '@/lib/projectMeta'
 import SectionHeader from '@/components/ui/SectionHeader'
 import aiProjects from '@/data/ai-projects.json'
+import wordpressProjects from '@/data/wordpress-projects.json'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -20,9 +21,28 @@ interface AiProject {
   featured?: boolean
 }
 
+interface WpProject {
+  slug: string
+  title: Record<string, string>
+  url?: string
+  featured?: boolean
+  kind?: Record<string, string>
+  desc?: Record<string, string>
+  metric?: { value: string; label: Record<string, string> }
+  tags: string[]
+}
+
 const AI_PROJECTS = aiProjects as AiProject[]
 const AI_GOLD = '#7c5cff'
 const AI_AMBER = '#2f6bff'
+
+const WP_PROJECTS = wordpressProjects as WpProject[]
+const WP_BLUE = '#21759B'
+const WP_ACCENT = '#2b8cc4'
+
+// Projects shown in the WordPress or AI blocks are left out of the "more projects" marquee.
+const HIGHLIGHTED_SLUGS = new Set([...WP_PROJECTS.map(p => p.slug), 'otaghak-blog', 'sadatpour'])
+const OTHER_PROJECTS = projects.filter(p => !HIGHLIGHTED_SLUGS.has(p.slug))
 
 const AI_ICON_SVGS: Record<string, ReactNode> = {
   brain: (
@@ -62,6 +82,14 @@ const AI_ICON_SVGS: Record<string, ReactNode> = {
       <path d="M50 8v8M50 84v8M8 50h8M84 50h8" stroke="currentColor" strokeWidth="1" opacity="0.2" strokeLinecap="round" />
       <path d="M64 36L54 54l-18 10 10-18z" fill="currentColor" opacity="0.28" />
       <circle cx="50" cy="50" r="3.5" fill="currentColor" opacity="0.45" />
+    </>
+  ),
+  code: (
+    <>
+      <rect x="16" y="22" width="68" height="56" rx="6" fill="none" stroke="currentColor" strokeWidth="0.8" opacity="0.15" />
+      <path d="M16 34h68" stroke="currentColor" strokeWidth="0.6" opacity="0.15" />
+      <path d="M40 46l-10 8 10 8M60 46l10 8-10 8" fill="none" stroke="currentColor" strokeWidth="1.5" opacity="0.35" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M53 44l-6 20" stroke="currentColor" strokeWidth="1.2" opacity="0.25" strokeLinecap="round" />
     </>
   ),
   rocket: (
@@ -107,8 +135,8 @@ function AiProjectCard({ proj, locale, visitLabel, big }: {
       rel="noopener noreferrer"
       className={`ai-card group relative flex flex-col overflow-hidden transition-all duration-500 hover:-translate-y-2 ${
         big
-          ? 'rounded-[28px] border-2 p-6 sm:p-8 lg:col-span-3 min-h-[220px] sm:min-h-[260px]'
-          : 'rounded-2xl border p-5 sm:p-6 lg:col-span-2'
+          ? 'rounded-[28px] border-2 p-6 sm:p-8 lg:col-span-2 min-h-[220px] sm:min-h-[260px]'
+          : 'rounded-2xl border p-5 sm:p-6 lg:col-span-1'
       }`}
       style={{
         background: big
@@ -185,6 +213,144 @@ function AiProjectCard({ proj, locale, visitLabel, big }: {
   )
 }
 
+function WpBadge() {
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1"
+      style={{ background: `${WP_BLUE}1f`, boxShadow: `0 0 0 1px ${WP_BLUE}40` }}
+    >
+      <svg viewBox="0 0 24 24" className="w-3 h-3" fill="none" stroke={WP_ACCENT} strokeWidth="2">
+        <path d={FILTER_META.wordpress.icon} />
+      </svg>
+      <span className="text-[9px] font-bold uppercase tracking-[0.2em]" style={{ color: WP_ACCENT }}>
+        WordPress
+      </span>
+    </span>
+  )
+}
+
+function ExternalArrow({ size = 12 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M7 17L17 7M7 7h10v10" />
+    </svg>
+  )
+}
+
+function WpFeaturedCard({ proj, locale, visitLabel }: { proj: WpProject; locale: string; visitLabel: string }) {
+  const title = proj.title[locale] ?? proj.title.en
+  const kind = proj.kind?.[locale] ?? proj.kind?.en
+  const desc = proj.desc?.[locale] ?? proj.desc?.en
+
+  return (
+    <a
+      href={proj.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="wp-card group relative flex flex-col overflow-hidden rounded-[24px] border-2 p-6 sm:p-7 transition-all duration-500 hover:-translate-y-2"
+      style={{
+        background: `linear-gradient(150deg, color-mix(in srgb, ${WP_BLUE} 9%, var(--card)), var(--card) 60%)`,
+        borderColor: `${WP_BLUE}59`,
+        boxShadow: `0 12px 48px -18px ${WP_BLUE}40`,
+      }}
+    >
+      <div className="lineart-grid absolute inset-0 opacity-40 pointer-events-none" aria-hidden />
+      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+        style={{ background: `radial-gradient(600px circle at 50% 0%, ${WP_BLUE}2e, transparent 70%)` }}
+      />
+      <div className="absolute -top-8 -right-8 w-44 h-44 opacity-[0.06] transition-all duration-700 group-hover:opacity-[0.12] group-hover:scale-110 group-hover:rotate-6" aria-hidden>
+        <svg viewBox="0 0 24 24" className="w-full h-full" fill="none" stroke={WP_BLUE} strokeWidth="0.6">
+          <path d={FILTER_META.wordpress.icon} />
+        </svg>
+      </div>
+
+      <div className="relative z-[1] flex items-center gap-2 mb-4">
+        <WpBadge />
+        {kind && (
+          <span className="ml-auto text-[10px] font-semibold" style={{ color: 'var(--text-muted)' }}>{kind}</span>
+        )}
+      </div>
+
+      <h3 className="relative z-[1] text-2xl sm:text-[1.7rem] font-black mb-2 leading-tight" style={{ color: 'var(--text)' }}>
+        {title}
+      </h3>
+      {desc && (
+        <p className="relative z-[1] text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+          {desc}
+        </p>
+      )}
+
+      {proj.metric && (
+        <div className="relative z-[1] mt-4 flex items-baseline gap-2">
+          <span className="text-2xl font-black tabular-nums" dir="ltr" style={{ color: WP_ACCENT }}>{proj.metric.value}</span>
+          <span className="text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+            {proj.metric.label[locale] ?? proj.metric.label.en}
+          </span>
+        </div>
+      )}
+
+      <div className="relative z-[1] mt-4 flex flex-wrap gap-1.5" dir="ltr">
+        {proj.tags.map(tag => (
+          <span key={tag} className="text-[10px] px-2 py-0.5 rounded font-medium"
+            style={{ background: `${WP_BLUE}14`, color: 'var(--text-secondary)', boxShadow: `0 0 0 1px ${WP_BLUE}26` }}>
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="relative z-[1] mt-auto pt-5">
+        <span className="text-xs font-bold inline-flex items-center gap-1.5 transition-all duration-300 group-hover:gap-2.5" style={{ color: WP_ACCENT }}>
+          {visitLabel}
+          <ExternalArrow />
+        </span>
+      </div>
+    </a>
+  )
+}
+
+function WpCompactCard({ proj, locale }: { proj: WpProject; locale: string }) {
+  const title = proj.title[locale] ?? proj.title.en
+  const body = (
+    <>
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg"
+        style={{ background: `${WP_BLUE}14`, boxShadow: `0 0 0 1px ${WP_BLUE}2e` }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={WP_ACCENT} strokeWidth="2">
+          <path d={FILTER_META.wordpress.icon} />
+        </svg>
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="flex items-center gap-1.5 text-base font-bold" style={{ color: 'var(--text)' }}>
+          <span className="truncate">{title}</span>
+          {proj.url && (
+            <span className="shrink-0 opacity-0 transition-opacity duration-300 group-hover:opacity-60 rtl:-scale-x-100" style={{ color: 'var(--text-muted)' }}>
+              <ExternalArrow size={11} />
+            </span>
+          )}
+        </span>
+        <span className="mt-1.5 flex flex-wrap gap-1" dir="ltr">
+          {proj.tags.map(tag => (
+            <span key={tag} className="text-[9px] px-1.5 py-0.5 rounded font-medium"
+              style={{ background: `${WP_BLUE}12`, color: 'var(--text-muted)' }}>
+              {tag}
+            </span>
+          ))}
+        </span>
+      </span>
+    </>
+  )
+  const className = 'wp-card group flex items-start gap-3 rounded-xl border p-4 transition-all duration-300'
+  const style = { background: 'var(--card)', borderColor: 'var(--border)' }
+
+  return proj.url ? (
+    <a href={proj.url} target="_blank" rel="noopener noreferrer"
+      className={`${className} hover:-translate-y-1 hover:border-[var(--border-strong)]`} style={style}>
+      {body}
+    </a>
+  ) : (
+    <div className={className} style={style}>{body}</div>
+  )
+}
+
 function ClientProjectCard({ project, label, isRTL }: { project: Project; label: string; isRTL: boolean }) {
   const pm = FILTER_META[project.category] || FILTER_META.all
   const techIcons = project.tags.map(t => getTechIcon(t)).filter(Boolean).slice(0, 3)
@@ -235,13 +401,14 @@ export default function ProjectsSection() {
 
   const featured = AI_PROJECTS.filter(p => p.featured)
   const rest = AI_PROJECTS.filter(p => !p.featured)
+  const wpFeatured = WP_PROJECTS.filter(p => p.featured)
+  const wpRest = WP_PROJECTS.filter(p => !p.featured)
 
-  // 4 rows, alternating direction, at half the previous scroll speed
+  // 3 rows, alternating direction
   const ROWS = [
-    { items: projects.filter((_, i) => i % 4 === 0), anim: 'marquee-left', dur: 120 },
-    { items: projects.filter((_, i) => i % 4 === 1), anim: 'marquee-right', dur: 130 },
-    { items: projects.filter((_, i) => i % 4 === 2), anim: 'marquee-left', dur: 125 },
-    { items: projects.filter((_, i) => i % 4 === 3), anim: 'marquee-right', dur: 135 },
+    { items: OTHER_PROJECTS.filter((_, i) => i % 3 === 0), anim: 'marquee-left', dur: 90 },
+    { items: OTHER_PROJECTS.filter((_, i) => i % 3 === 1), anim: 'marquee-right', dur: 100 },
+    { items: OTHER_PROJECTS.filter((_, i) => i % 3 === 2), anim: 'marquee-left', dur: 95 },
   ]
 
   useEffect(() => {
@@ -250,9 +417,13 @@ export default function ProjectsSection() {
         y: 0, opacity: 1, duration: 0.7, ease: 'power3.out',
         scrollTrigger: { trigger: ref.current, start: 'top 76%' },
       })
+      gsap.fromTo('.wp-card', { y: 40, opacity: 0 }, {
+        y: 0, opacity: 1, duration: 0.55, stagger: 0.06, ease: 'power3.out',
+        scrollTrigger: { trigger: '.wp-block', start: 'top 78%' },
+      })
       gsap.fromTo('.ai-card', { y: 40, opacity: 0, scale: 0.96 }, {
         y: 0, opacity: 1, scale: 1, duration: 0.55, stagger: 0.09, ease: 'back.out(1.4)',
-        scrollTrigger: { trigger: ref.current, start: 'top 70%' },
+        scrollTrigger: { trigger: '.ai-block', start: 'top 78%' },
       })
     }, ref)
     return () => ctx.revert()
@@ -263,8 +434,34 @@ export default function ProjectsSection() {
       <div className="section-container">
         <SectionHeader title={t('title')} subtitle={t('subtitle')} />
 
+        {/* ── WordPress showcase ──────────────────────────────── */}
+        <div className="wp-block relative mb-16 sm:mb-20">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-8 w-1 rounded-full" style={{ background: `linear-gradient(180deg, ${WP_ACCENT}, ${WP_BLUE})` }} />
+            <div>
+              <span className="text-sm sm:text-base font-black uppercase tracking-[0.2em]" style={{ color: WP_ACCENT }}>
+                {t('wp_title')}
+              </span>
+              <p className="text-[11px] sm:text-xs font-medium mt-0.5" style={{ color: 'var(--text-muted)' }}>
+                {t('wp_intro')}
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+            {wpFeatured.map(proj => (
+              <WpFeaturedCard key={proj.slug} proj={proj} locale={locale} visitLabel={t('visit')} />
+            ))}
+          </div>
+          <div className="mt-4 sm:mt-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {wpRest.map(proj => (
+              <WpCompactCard key={proj.slug} proj={proj} locale={locale} />
+            ))}
+          </div>
+        </div>
+
         {/* ── AI showcase ─────────────────────────────────────── */}
-        <div className="relative mb-14 sm:mb-16">
+        <div className="ai-block relative mb-14 sm:mb-16">
           <div className="flex items-center gap-3 mb-6">
             <div className="h-8 w-1 rounded-full" style={{ background: `linear-gradient(180deg, ${AI_GOLD}, ${AI_AMBER})` }} />
             <div>
@@ -277,7 +474,7 @@ export default function ProjectsSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {featured.map(proj => (
               <AiProjectCard key={proj.url} proj={proj} locale={locale} visitLabel={t('visit')} big />
             ))}
@@ -287,7 +484,7 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* ── Client projects: 4 horizontal auto-scroll rows ──── */}
+        {/* ── Other client projects: 3 horizontal auto-scroll rows ── */}
         <div className="mt-20 sm:mt-28 mb-8 sm:mb-10 text-center">
           <h3 className="text-2xl sm:text-3xl font-black tracking-tight" style={{ color: 'var(--text)' }}>
             {t('client_projects')}

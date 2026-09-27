@@ -62,12 +62,14 @@
     "view": "Projeyi Gör",
     "live": "Canlı Demo",
     "github": "Kaynak Kodu",
+    "wp_title": "WordPress Projeleri",
+    "wp_intro": "WordPress ve WooCommerce ile geliştirdiğim platformlar ve mağazalar",
     "ai_vibe": "AI Vibe",
     "featured": "öne çıkan",
     "show_more": "Daha Fazla Göster",
     "visit": "Siteyi Ziyaret Et",
     "ai_intro": "Yapay zekâ ile tasarlanıp geliştirilen ürünler",
-    "client_projects": "Müşteri Projeleri",
+    "client_projects": "Diğer Projeler",
     "client_intro": "Tasarladığım veya desteklediğim web sitelerinden bir seçki"
   },
   "experience": {
