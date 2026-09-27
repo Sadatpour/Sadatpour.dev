@@ -180,10 +180,27 @@ Open [http://localhost:3000/fa](http://localhost:3000/fa) in your browser.
 
 ```bash
 npm run dev        # Start development server
-npm run build      # Build for production
-npm run start      # Start production server
+npm run build      # Static export → out/ (output: 'export' in next.config.ts)
 npm run lint       # Run ESLint
 ```
+
+`npm run start` does not apply: the site is a static export, so there is no Node server in production.
+
+---
+
+## 🚚 Deploy to shared hosting (cPanel / DirectAdmin, Apache or LiteSpeed)
+
+1. Build: `npm ci && npm run build`. The complete site is in `out/`.
+2. Upload the **contents** of `out/` (not the folder itself) to the domain's document root, usually `public_html/`.
+   Easiest: zip them (`cd out && zip -r ../site.zip .`), upload the zip in File Manager, then **Extract** in `public_html/`.
+3. Make sure hidden files are uploaded: `out/.htaccess` must end up as `public_html/.htaccess`.
+4. Enable SSL for the domain (AutoSSL / Let's Encrypt) **before** the first visit. `.dev` domains only load over HTTPS.
+
+What `public/.htaccess` does: HTTPS and `www` → apex redirects, `404.html` as the error page,
+one-year cache for hashed `/_next/static` files, no-cache for HTML, Gzip/Brotli, and security headers.
+`/` redirects visitors to their last language (default `/fa/`).
+
+To update the site later, rebuild and replace the files in `public_html/`. Old `/_next/static` files can be deleted.
 
 ---
 

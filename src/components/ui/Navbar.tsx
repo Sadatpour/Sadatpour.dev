@@ -55,7 +55,7 @@ export default function Navbar({ theme, onThemeToggle, activeSection }: Props) {
       className={`fixed top-0 left-0 right-0 z-50 border-b px-4 py-2.5 transition-all duration-300 max-sm:mb-[60px] ${scrolled ? 'glass-header' : 'border-transparent'}`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3">
-        <Link href={`/${locale}#hero`} className="flex items-center shrink-0">
+        <Link href={`/${locale}/#hero`} className="flex items-center shrink-0">
           <Image src="/MY-Signture.png" alt="Sadatpour" width={240} height={60}
             className="h-11 w-auto object-contain sm:h-12" style={{ filter: isDark ? 'brightness(0) invert(1)' : 'none' }} />
         </Link>
