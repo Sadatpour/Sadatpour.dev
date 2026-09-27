@@ -224,6 +224,21 @@ const MOTIFS: Record<string, ReactNode> = {
       {[204, 220, 236].map(x => <circle key={x} className="sc-pulse" cx={x} cy="115" r="4" fill="currentColor" />)}
     </>
   ),
+  // Fabric store: fabric bolt, draped cloth and a measuring tape
+  fabric: (
+    <>
+      <path className="sc-draw" pathLength={1} d="M70 40h96v84H70z" stroke="currentColor" strokeWidth="2.5" fill="currentColor" fillOpacity="0.12" />
+      <ellipse cx="70" cy="82" rx="14" ry="42" fill="var(--card)" stroke="currentColor" strokeWidth="2.5" />
+      <path d="M70 58a6 24 0 1 1 0 48M70 70a3 12 0 1 1 0 24" stroke="currentColor" strokeOpacity="0.6" strokeWidth="1.5" />
+      {[60, 76, 92, 108].map(y => <path key={y} d={`M84 ${y}h82`} stroke="currentColor" strokeOpacity="0.2" strokeWidth="2" />)}
+      <path d="M166 40c30 6 40 28 58 44s36 18 50 40v12h-84c10-18 4-34-24-50z" fill="currentColor" fillOpacity="0.3" stroke="currentColor" strokeOpacity="0.6" strokeLinejoin="round" />
+      <path d="M200 70c12 12 18 30 12 58M232 96c8 10 10 22 6 32" stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.5" strokeLinecap="round" />
+      <path d="M40 146h240" stroke="currentColor" strokeWidth="8" strokeOpacity="0.25" strokeLinecap="round" />
+      {Array.from({ length: 12 }, (_, i) => (
+        <path key={i} d={`M${48 + i * 20} 142v${i % 2 ? 4 : 8}`} stroke="currentColor" strokeWidth="1.5" strokeOpacity="0.8" />
+      ))}
+    </>
+  ),
   // Digital agency: megaphone with signal waves
   megaphone: (
     <>

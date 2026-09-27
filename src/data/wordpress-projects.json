@@ -305,21 +305,21 @@
     "title": {
       "en": "Parchat"
     },
-    "accent": "#22c55e",
-    "motif": "chat",
+    "accent": "#d946ef",
+    "motif": "fabric",
     "kind": {
-      "fa": "پلتفرم گفتگو",
-      "en": "Chat platform",
-      "de": "Chat-Plattform",
-      "tr": "Sohbet platformu",
-      "ar": "منصة دردشة",
-      "zh": "聊天平台"
+      "fa": "فروشگاه پارچه",
+      "en": "Fabric store",
+      "de": "Stoffgeschäft",
+      "tr": "Kumaş mağazası",
+      "ar": "متجر أقمشة",
+      "zh": "面料商店"
     },
     "url": "https://parchat.net/",
     "more": true,
     "tags": [
       "WordPress",
-      "Real-time",
+      "E-commerce",
       "Custom Theme"
     ]
   },

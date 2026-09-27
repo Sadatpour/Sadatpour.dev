@@ -155,7 +155,7 @@ export interface Project {
       title: 'Parchat',
       url: 'https://parchat.net/',
       role: 'Design and Technical Support',
-      tags: ['WordPress', 'Real-time', 'Custom Theme'],
+      tags: ['WordPress', 'E-commerce', 'Custom Theme'],
       category: 'wordpress',
       featured: true,
     },
